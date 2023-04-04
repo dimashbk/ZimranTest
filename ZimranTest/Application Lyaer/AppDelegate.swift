@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Amplify
+import AWSCognitoAuthPlugin
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = UINavigationController(rootViewController: SignInViewController())
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white
+        do {
+               try Amplify.add(plugin: AWSCognitoAuthPlugin())
+               try Amplify.configure()
+               print("Amplify configured with auth plugin")
+           } catch {
+               print("Failed to initialize Amplify with \(error)")
+           }
+        
         return true
     }
     
