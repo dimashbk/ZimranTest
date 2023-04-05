@@ -7,8 +7,11 @@
 
 import UIKit
 import SnapKit
+import Amplify
 
 final class SignInViewController: UIViewController {
+    
+    let viewModel = SignInViewModel()
     
     private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
@@ -61,8 +64,15 @@ final class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        Task {
+//            await viewModel.signIn(username: "dimash_test_assignment@zimran.io", password: "6f7vTJqLrzm96c3H7Phy3mMa")
+////            await viewModel.signOutLocally()
+            await viewModel.fetchCurrentAuthSession()
+            await viewModel.fetchAttributes()
+        }
     
     }
+    
     
     private func setup() {
         setupViews()
@@ -109,5 +119,5 @@ final class SignInViewController: UIViewController {
             make.height.equalTo(56)
         }
     }
-
+    
 }

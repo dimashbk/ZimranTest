@@ -9,16 +9,25 @@ import UIKit
 import Amplify
 import AWSCognitoAuthPlugin
 
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: SignInViewController())
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white
+        
+        configureAmplify()
+        
+        return true
+    }
+    
+    private func configureAmplify() {
         do {
                try Amplify.add(plugin: AWSCognitoAuthPlugin())
                try Amplify.configure()
@@ -26,9 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            } catch {
                print("Failed to initialize Amplify with \(error)")
            }
-        
-        return true
     }
-    
 }
 
