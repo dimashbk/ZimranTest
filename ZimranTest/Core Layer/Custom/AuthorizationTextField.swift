@@ -9,7 +9,7 @@ import UIKit
 
 final class AuthorizationTextField: UITextField, UITextFieldDelegate {
     
-    private let edgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+    private let edgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 10)
     
     var onClick = false
     
@@ -86,8 +86,8 @@ final class AuthorizationTextField: UITextField, UITextFieldDelegate {
     
 }
 
-extension AuthorizationTextField {
-    override func touchesBegan(_ touches:Set<UITouch>, with event: UIEvent?) {
-            self.endEditing(true)
-    }
-}
+//extension AuthorizationTextField {
+//    override func touchesBegan(_ touches:Set<UITouch>, with event: UIEvent?) {
+//            self.endEditing(true)
+//    }
+//}

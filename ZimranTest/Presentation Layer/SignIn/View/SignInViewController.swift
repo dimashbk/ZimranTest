@@ -11,7 +11,7 @@ import Amplify
 
 final class SignInViewController: UIViewController {
     
-    let viewModel = SignInViewModel()
+    let viewModel = AuthorizationViewModel()
     
     private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
@@ -48,6 +48,7 @@ final class SignInViewController: UIViewController {
     
     private lazy var passwordTextField: AuthorizationTextField = {
         let textField = AuthorizationTextField(placeholder: "Enter password")
+        textField.isSecureTextEntry = true
         textField.eyeButton.isHidden = false
         
         return textField
@@ -57,19 +58,25 @@ final class SignInViewController: UIViewController {
         let button = MyButton(title: "Login", fontSize: 16)
         button.backgroundColor = .zmPrimaryBlue
         button.layer.cornerRadius = 10
-        
+        button.addTarget(self, action: #selector(signUp), for: .touchUpInside)
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+  
         Task {
-//            await viewModel.signIn(username: "dimash_test_assignment@zimran.io", password: "6f7vTJqLrzm96c3H7Phy3mMa")
-////            await viewModel.signOutLocally()
-            await viewModel.fetchCurrentAuthSession()
-            await viewModel.fetchAttributes()
+            await viewModel.signOutLocally()
+            await viewModel.signIn(username: "dimash_test_assignment@zimran.io", password: "6f7vTJqLrzm96c3H7Phy3mMa")
+
+//            await viewModel.fetchCurrentAuthSession()
+//            await viewModel.fetchAttributes()
+            await viewModel.fetchAccessToken()
+            print(viewModel.accessToken)
+    
         }
+        
     
     }
     
@@ -117,6 +124,22 @@ final class SignInViewController: UIViewController {
             make.top.equalTo(passwordTextField.snp.bottom).offset(50)
             make.left.right.equalToSuperview().inset(16)
             make.height.equalTo(56)
+        }
+    }
+    @objc func signUp() {
+        Task {
+            loginButton.isEnabled = false
+            await viewModel.signIn(username: emailTextField.text ?? ""
+                                   , password: passwordTextField.text ?? "")
+            await viewModel.fetchAccessToken()
+            if viewModel.isSignedIn {
+                navigationController?.pushViewController(HomeViewController(), animated: true)
+                loginButton.isEnabled = true
+            } else {
+                loginButton.isEnabled = true
+            }
+
+            print(viewModel.accessToken)
         }
     }
     

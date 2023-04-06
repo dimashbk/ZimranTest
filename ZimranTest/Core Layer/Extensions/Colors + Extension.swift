@@ -20,4 +20,13 @@ extension UIColor {
     static var zmPrimaryBlue: UIColor {
         UIColor(red: 0.338, green: 0.325, blue: 0.996, alpha: 1)
     }
+    static var zmPurple: UIColor {
+        UIColor(red: 0.141, green: 0.137, blue: 0.31, alpha: 1)
+    }
+    static var zmGreen: UIColor {
+        UIColor(red: 0.204, green: 0.78, blue: 0.349, alpha: 1)
+    }
+    static var zmGrayProgress: UIColor {
+        UIColor(red: 0.851, green: 0.851, blue: 0.851, alpha: 0.4)
+    }
 }

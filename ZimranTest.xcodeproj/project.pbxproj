@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D5C723B29DC53BB00D96D5F /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C723A29DC53BB00D96D5F /* SignInViewModel.swift */; };
+		1D3196D429DF238200D1A8FA /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3196D329DF238200D1A8FA /* QuizViewController.swift */; };
+		1D3196D629DF258000D1A8FA /* QuizViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3196D529DF258000D1A8FA /* QuizViewController + Extension.swift */; };
+		1D5C723B29DC53BB00D96D5F /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C723A29DC53BB00D96D5F /* AuthorizationViewModel.swift */; };
 		1D5C723E29DC663400D96D5F /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5C723D29DC663400D96D5F /* AWSAPIPlugin */; };
 		1D5C724029DC663400D96D5F /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5C723F29DC663400D96D5F /* AWSCognitoAuthPlugin */; };
 		1D5C724229DC663400D96D5F /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5C724129DC663400D96D5F /* AWSDataStorePlugin */; };
@@ -26,10 +28,13 @@
 		1D66BFAA29DC263B006EE621 /* Colors + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D66BFA929DC263B006EE621 /* Colors + Extension.swift */; };
 		1D66BFAE29DC29DB006EE621 /* AuthorizationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D66BFAD29DC29DB006EE621 /* AuthorizationTextField.swift */; };
 		1D66BFB129DC317A006EE621 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D66BFB029DC317A006EE621 /* MyButton.swift */; };
+		1DD30DB229DD9CF300119EF1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD30DB129DD9CF300119EF1 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D5C723A29DC53BB00D96D5F /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		1D3196D329DF238200D1A8FA /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		1D3196D529DF258000D1A8FA /* QuizViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizViewController + Extension.swift"; sourceTree = "<group>"; };
+		1D5C723A29DC53BB00D96D5F /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		1D5C724B29DC7FCF00D96D5F /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		1D5C724C29DC7FCF00D96D5F /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		1D66BF7D29DC1D24006EE621 /* ZimranTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZimranTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +49,7 @@
 		1D66BFA929DC263B006EE621 /* Colors + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors + Extension.swift"; sourceTree = "<group>"; };
 		1D66BFAD29DC29DB006EE621 /* AuthorizationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationTextField.swift; sourceTree = "<group>"; };
 		1D66BFB029DC317A006EE621 /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
+		1DD30DB129DD9CF300119EF1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +76,19 @@
 			path = "Network Layer";
 			sourceTree = "<group>";
 		};
+		1D3196D229DF231F00D1A8FA /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				1D3196D329DF238200D1A8FA /* QuizViewController.swift */,
+				1D3196D529DF258000D1A8FA /* QuizViewController + Extension.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
 		1D5C723929DC471700D96D5F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1D5C723A29DC53BB00D96D5F /* SignInViewModel.swift */,
+				1D5C723A29DC53BB00D96D5F /* AuthorizationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -98,9 +113,9 @@
 		1D66BF7F29DC1D24006EE621 /* ZimranTest */ = {
 			isa = PBXGroup;
 			children = (
-				1D2DBC3E29DD59C9003E80F2 /* Network Layer */,
 				1D66BF9429DC1E7D006EE621 /* Application Lyaer */,
 				1D66BF9529DC1E85006EE621 /* Presentation Layer */,
+				1D2DBC3E29DD59C9003E80F2 /* Network Layer */,
 				1D66BF9629DC1EA9006EE621 /* Core Layer */,
 				1D66BF8E29DC1D25006EE621 /* Info.plist */,
 			);
@@ -119,6 +134,8 @@
 		1D66BF9529DC1E85006EE621 /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
+				1D3196D229DF231F00D1A8FA /* Quiz */,
+				1DD30DAE29DD9CD200119EF1 /* HomePage */,
 				1D66BF9729DC1ED5006EE621 /* SignIn */,
 			);
 			path = "Presentation Layer";
@@ -185,6 +202,14 @@
 				1D66BFB029DC317A006EE621 /* MyButton.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		1DD30DAE29DD9CD200119EF1 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				1DD30DB129DD9CF300119EF1 /* HomeViewController.swift */,
+			);
+			path = HomePage;
 			sourceTree = "<group>";
 		};
 		49CF55593931ED9794928B36 /* AmplifyConfig */ = {
@@ -285,9 +310,12 @@
 			files = (
 				1D66BFAA29DC263B006EE621 /* Colors + Extension.swift in Sources */,
 				1D66BFAE29DC29DB006EE621 /* AuthorizationTextField.swift in Sources */,
-				1D5C723B29DC53BB00D96D5F /* SignInViewModel.swift in Sources */,
+				1D5C723B29DC53BB00D96D5F /* AuthorizationViewModel.swift in Sources */,
+				1D3196D429DF238200D1A8FA /* QuizViewController.swift in Sources */,
 				1D66BFB129DC317A006EE621 /* MyButton.swift in Sources */,
+				1D3196D629DF258000D1A8FA /* QuizViewController + Extension.swift in Sources */,
 				1D66BF9A29DC1EF3006EE621 /* SignInViewController.swift in Sources */,
+				1DD30DB229DD9CF300119EF1 /* HomeViewController.swift in Sources */,
 				1D66BF8129DC1D24006EE621 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

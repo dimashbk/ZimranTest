@@ -11,7 +11,11 @@ import AWSCognitoAuthPlugin
 import AWSCognitoIdentity
 import AWSPluginsCore
 
-class SignInViewModel {
+class AuthorizationViewModel {
+    
+    var accessToken = ""
+    var isSignedIn = false
+    
     func signIn(username: String, password: String) async {
         do {
             let signInResult =  try await Amplify.Auth.signIn(
@@ -20,6 +24,7 @@ class SignInViewModel {
                 )
             if signInResult.isSignedIn {
                 print("Sign in succeeded")
+                self.isSignedIn = true
             }
         } catch let error as AuthError {
             print("Sign in failed \(error)")
@@ -65,8 +70,10 @@ class SignInViewModel {
         }
     }
     func fetchCurrentAuthSession() async {
+        
         do {
             let session = try await Amplify.Auth.fetchAuthSession()
+          
             print("Is user signed in - \(session.isSignedIn)")
         } catch let error as AuthError {
             print("Fetch session failed with error \(error)")
@@ -84,33 +91,21 @@ class SignInViewModel {
             print("Unexpected error: \(error)")
         }
     }
-    func hhh() async {
-
+    func fetchAccessToken() async {
 
         do {
             let session = try await Amplify.Auth.fetchAuthSession()
 
-            // Get user sub or identity id
-            if let identityProvider = session as? AuthCognitoIdentityProvider {
-                let usersub = try identityProvider.getUserSub().get()
-                let identityId = try identityProvider.getIdentityId().get()
-                print("User sub - \(usersub) and identity id \(identityId)")
-            }
-
-            // Get AWS credentials
-            if let awsCredentialsProvider = session as? AuthAWSCredentialsProvider {
-                let credentials = try awsCredentialsProvider.getAWSCredentials().get()
-                // Do something with the credentials
-            }
-
             // Get cognito user pool token
             if let cognitoTokenProvider = session as? AuthCognitoTokensProvider {
                 let tokens = try cognitoTokenProvider.getCognitoTokens().get()
-                // Do something with the JWT tokens
+                print(tokens)
+                accessToken = tokens.accessToken
             }
         } catch let error as AuthError {
             print("Fetch auth session failed with error - \(error)")
         } catch {
+            print("Unexpected error: \(error)")
         }
     }
     
