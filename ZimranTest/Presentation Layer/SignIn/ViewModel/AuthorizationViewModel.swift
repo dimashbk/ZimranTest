@@ -20,8 +20,7 @@ class AuthorizationViewModel {
         do {
             let signInResult =  try await Amplify.Auth.signIn(
                 username: username,
-                password: password
-                )
+                password: password )
             if signInResult.isSignedIn {
                 print("Sign in succeeded")
                 self.isSignedIn = true
@@ -34,15 +33,19 @@ class AuthorizationViewModel {
     }
 
     func signOutLocally() async {
+        
         let result = await Amplify.Auth.signOut()
+        
         guard let signOutResult = result as? AWSCognitoSignOutResult
         else {
             print("Signout failed")
             return
         }
-
+        
         print("Local signout successful: \(signOutResult.signedOutLocally)")
+        
         switch signOutResult {
+            
         case .complete:
             // Sign Out completed fully and without errors.
             print("Signed out successfully")
@@ -69,8 +72,8 @@ class AuthorizationViewModel {
             print("SignOut failed with \(error)")
         }
     }
+    
     func fetchCurrentAuthSession() async {
-        
         do {
             let session = try await Amplify.Auth.fetchAuthSession()
           
@@ -81,6 +84,7 @@ class AuthorizationViewModel {
             print("Unexpected error: \(error)")
         }
     }
+    
     func fetchAttributes() async {
         do {
             let attributes = try await Amplify.Auth.fetchUserAttributes()
@@ -91,8 +95,8 @@ class AuthorizationViewModel {
             print("Unexpected error: \(error)")
         }
     }
+    
     func fetchAccessToken() async {
-
         do {
             let session = try await Amplify.Auth.fetchAuthSession()
 
@@ -108,7 +112,6 @@ class AuthorizationViewModel {
             print("Unexpected error: \(error)")
         }
     }
-    
     
 }
 

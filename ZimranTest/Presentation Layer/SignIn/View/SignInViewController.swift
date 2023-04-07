@@ -129,8 +129,8 @@ final class SignInViewController: UIViewController {
     @objc func signUp() {
         Task {
             loginButton.isEnabled = false
-            await viewModel.signIn(username: emailTextField.text ?? ""
-                                   , password: passwordTextField.text ?? "")
+            await viewModel.signIn(username: emailTextField.text ?? "",
+                                   password: passwordTextField.text ?? "")
             await viewModel.fetchAccessToken()
             if viewModel.isSignedIn {
                 navigationController?.pushViewController(HomeViewController(), animated: true)

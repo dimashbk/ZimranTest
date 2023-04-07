@@ -29,4 +29,10 @@ extension UIColor {
     static var zmGrayProgress: UIColor {
         UIColor(red: 0.851, green: 0.851, blue: 0.851, alpha: 0.4)
     }
+    static var zmGrayQuizChoises: UIColor {
+        UIColor(red: 0.784, green: 0.808, blue: 0.843, alpha: 1)
+    }
+    static var zmSelectedQuizChoises: UIColor {
+        UIColor(red: 0.933, green: 0.933, blue: 1, alpha: 1)
+    }
 }

@@ -28,7 +28,14 @@
 		1D66BFAA29DC263B006EE621 /* Colors + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D66BFA929DC263B006EE621 /* Colors + Extension.swift */; };
 		1D66BFAE29DC29DB006EE621 /* AuthorizationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D66BFAD29DC29DB006EE621 /* AuthorizationTextField.swift */; };
 		1D66BFB129DC317A006EE621 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D66BFB029DC317A006EE621 /* MyButton.swift */; };
+		1DB7397129E032C600F9A28A /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7397029E032C600F9A28A /* MainModel.swift */; };
+		1DB7397429E03F5C00F9A28A /* SingleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7397329E03F5C00F9A28A /* SingleTextButton.swift */; };
+		1DB7397729E07B5A00F9A28A /* SingleMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7397629E07B5A00F9A28A /* SingleMediaCollectionViewCell.swift */; };
+		1DB7397A29E07BEB00F9A28A /* SingleMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7397929E07BEB00F9A28A /* SingleMediaButton.swift */; };
+		1DB7397C29E07EDD00F9A28A /* QuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7397B29E07EDD00F9A28A /* QuizButton.swift */; };
+		1DB7397E29E0869D00F9A28A /* BooleanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7397D29E0869D00F9A28A /* BooleanCollectionViewCell.swift */; };
 		1DD30DB229DD9CF300119EF1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD30DB129DD9CF300119EF1 /* HomeViewController.swift */; };
+		1DDB459629E01B04000255AE /* SingleTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB459529E01B04000255AE /* SingleTextCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +56,14 @@
 		1D66BFA929DC263B006EE621 /* Colors + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors + Extension.swift"; sourceTree = "<group>"; };
 		1D66BFAD29DC29DB006EE621 /* AuthorizationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationTextField.swift; sourceTree = "<group>"; };
 		1D66BFB029DC317A006EE621 /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
+		1DB7397029E032C600F9A28A /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		1DB7397329E03F5C00F9A28A /* SingleTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextButton.swift; sourceTree = "<group>"; };
+		1DB7397629E07B5A00F9A28A /* SingleMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleMediaCollectionViewCell.swift; sourceTree = "<group>"; };
+		1DB7397929E07BEB00F9A28A /* SingleMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleMediaButton.swift; sourceTree = "<group>"; };
+		1DB7397B29E07EDD00F9A28A /* QuizButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizButton.swift; sourceTree = "<group>"; };
+		1DB7397D29E0869D00F9A28A /* BooleanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooleanCollectionViewCell.swift; sourceTree = "<group>"; };
 		1DD30DB129DD9CF300119EF1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1DDB459529E01B04000255AE /* SingleTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +86,7 @@
 		1D2DBC3E29DD59C9003E80F2 /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
+				1DB7396F29E02FE700F9A28A /* Models */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -79,8 +94,8 @@
 		1D3196D229DF231F00D1A8FA /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				1D3196D329DF238200D1A8FA /* QuizViewController.swift */,
-				1D3196D529DF258000D1A8FA /* QuizViewController + Extension.swift */,
+				1DB7397F29E0870200F9A28A /* View */,
+				1DB7397529E050FE00F9A28A /* ViewModel */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -147,7 +162,6 @@
 				1D66BFAC29DC29C3006EE621 /* Custom */,
 				1D66BFAB29DC273A006EE621 /* Resources */,
 				1D66BFA529DC24A5006EE621 /* Extensions */,
-				1D66BF9E29DC2392006EE621 /* Fonts */,
 			);
 			path = "Core Layer";
 			sourceTree = "<group>";
@@ -190,6 +204,7 @@
 		1D66BFAB29DC273A006EE621 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1D66BF9E29DC2392006EE621 /* Fonts */,
 				1D66BF8929DC1D25006EE621 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -198,10 +213,46 @@
 		1D66BFAC29DC29C3006EE621 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				1DB7397829E07BD200F9A28A /* QuizButtons */,
 				1D66BFAD29DC29DB006EE621 /* AuthorizationTextField.swift */,
 				1D66BFB029DC317A006EE621 /* MyButton.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		1DB7396F29E02FE700F9A28A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1DB7397029E032C600F9A28A /* MainModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1DB7397529E050FE00F9A28A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1DB7397829E07BD200F9A28A /* QuizButtons */ = {
+			isa = PBXGroup;
+			children = (
+				1DB7397B29E07EDD00F9A28A /* QuizButton.swift */,
+				1DB7397329E03F5C00F9A28A /* SingleTextButton.swift */,
+				1DB7397929E07BEB00F9A28A /* SingleMediaButton.swift */,
+			);
+			path = QuizButtons;
+			sourceTree = "<group>";
+		};
+		1DB7397F29E0870200F9A28A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DDB459429E01ABF000255AE /* Cells */,
+				1D3196D329DF238200D1A8FA /* QuizViewController.swift */,
+				1D3196D529DF258000D1A8FA /* QuizViewController + Extension.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		1DD30DAE29DD9CD200119EF1 /* HomePage */ = {
@@ -210,6 +261,16 @@
 				1DD30DB129DD9CF300119EF1 /* HomeViewController.swift */,
 			);
 			path = HomePage;
+			sourceTree = "<group>";
+		};
+		1DDB459429E01ABF000255AE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1DDB459529E01B04000255AE /* SingleTextCollectionViewCell.swift */,
+				1DB7397629E07B5A00F9A28A /* SingleMediaCollectionViewCell.swift */,
+				1DB7397D29E0869D00F9A28A /* BooleanCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		49CF55593931ED9794928B36 /* AmplifyConfig */ = {
@@ -309,14 +370,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D66BFAA29DC263B006EE621 /* Colors + Extension.swift in Sources */,
+				1DB7397E29E0869D00F9A28A /* BooleanCollectionViewCell.swift in Sources */,
+				1DB7397C29E07EDD00F9A28A /* QuizButton.swift in Sources */,
 				1D66BFAE29DC29DB006EE621 /* AuthorizationTextField.swift in Sources */,
 				1D5C723B29DC53BB00D96D5F /* AuthorizationViewModel.swift in Sources */,
 				1D3196D429DF238200D1A8FA /* QuizViewController.swift in Sources */,
 				1D66BFB129DC317A006EE621 /* MyButton.swift in Sources */,
 				1D3196D629DF258000D1A8FA /* QuizViewController + Extension.swift in Sources */,
+				1DB7397A29E07BEB00F9A28A /* SingleMediaButton.swift in Sources */,
+				1DB7397129E032C600F9A28A /* MainModel.swift in Sources */,
 				1D66BF9A29DC1EF3006EE621 /* SignInViewController.swift in Sources */,
+				1DB7397429E03F5C00F9A28A /* SingleTextButton.swift in Sources */,
+				1DDB459629E01B04000255AE /* SingleTextCollectionViewCell.swift in Sources */,
 				1DD30DB229DD9CF300119EF1 /* HomeViewController.swift in Sources */,
 				1D66BF8129DC1D24006EE621 /* AppDelegate.swift in Sources */,
+				1DB7397729E07B5A00F9A28A /* SingleMediaCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
