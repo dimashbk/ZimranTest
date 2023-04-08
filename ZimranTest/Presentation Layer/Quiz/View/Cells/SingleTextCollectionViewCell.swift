@@ -9,7 +9,7 @@ import UIKit
 
 
 
-final class SingleTextCollectionViewCell: UICollectionViewCell , ButtonStateProtocol {
+final class SingleTextCollectionViewCell: UICollectionViewCell , ButtonStateProtocol{
     
     override class func description() -> String {
         return "SingleTextCollectionViewCell"
@@ -32,6 +32,7 @@ final class SingleTextCollectionViewCell: UICollectionViewCell , ButtonStateProt
         let button = SingleTextButton()
         button.delegate = self
         button.addTarget(self, action: #selector(changeState), for: .touchUpInside)
+        
         return button
     }()
     
@@ -39,6 +40,7 @@ final class SingleTextCollectionViewCell: UICollectionViewCell , ButtonStateProt
         let button = SingleTextButton()
         button.delegate = self
         button.addTarget(self, action: #selector(changeState), for: .touchUpInside)
+        
         return button
     }()
     
@@ -46,6 +48,7 @@ final class SingleTextCollectionViewCell: UICollectionViewCell , ButtonStateProt
         let button = SingleTextButton()
         button.delegate = self
         button.addTarget(self, action: #selector(changeState), for: .touchUpInside)
+        
         return button
     }()
     
@@ -53,6 +56,7 @@ final class SingleTextCollectionViewCell: UICollectionViewCell , ButtonStateProt
         let button = SingleTextButton()
         button.delegate = self
         button.addTarget(self, action: #selector(changeState), for: .touchUpInside)
+        
         return button
     }()
     
@@ -61,6 +65,7 @@ final class SingleTextCollectionViewCell: UICollectionViewCell , ButtonStateProt
         
         setup()
         layer.cornerRadius = 8
+        backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {

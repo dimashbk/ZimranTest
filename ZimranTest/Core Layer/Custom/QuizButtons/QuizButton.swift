@@ -17,6 +17,9 @@ enum ButtonStates {
 protocol ButtonStateProtocol {
     func setOnClickButton(button: UIButton)
 }
+protocol SecondButtonStateProtocol {
+    func setOnClickSecondButton(button: UIButton)
+}
 
 //class QuizButton: UIButton {
 //

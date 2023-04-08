@@ -35,4 +35,7 @@ extension UIColor {
     static var zmSelectedQuizChoises: UIColor {
         UIColor(red: 0.933, green: 0.933, blue: 1, alpha: 1)
     }
+    static var zmRed: UIColor {
+        UIColor(red: 1, green: 0.271, blue: 0.227, alpha: 1)
+    }
 }

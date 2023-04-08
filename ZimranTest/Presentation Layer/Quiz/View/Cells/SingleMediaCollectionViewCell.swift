@@ -61,6 +61,7 @@ final class SingleMediaCollectionViewCell: UICollectionViewCell, ButtonStateProt
         
         setup()
         layer.cornerRadius = 8
+        backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {

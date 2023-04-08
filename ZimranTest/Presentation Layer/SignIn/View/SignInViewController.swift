@@ -65,7 +65,6 @@ final class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-  
         Task {
             await viewModel.signOutLocally()
             await viewModel.signIn(username: "dimash_test_assignment@zimran.io", password: "6f7vTJqLrzm96c3H7Phy3mMa")
@@ -76,8 +75,6 @@ final class SignInViewController: UIViewController {
             print(viewModel.accessToken)
     
         }
-        
-    
     }
     
     
@@ -126,6 +123,7 @@ final class SignInViewController: UIViewController {
             make.height.equalTo(56)
         }
     }
+    
     @objc func signUp() {
         Task {
             loginButton.isEnabled = false

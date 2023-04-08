@@ -1,27 +1,32 @@
 //
-//  SingleMediaButton.swift
+//  MatchingButton.swift
 //  ZimranTest
 //
-//  Created by Dinmukhamed on 07.04.2023.
+//  Created by Dinmukhamed on 08.04.2023.
 //
 
 import UIKit
 
-final class SingleMediaButton: UIButton {
+final class MatchingButton: UIButton {
     
     var delegate: ButtonStateProtocol?
+    var secondDelegate: SecondButtonStateProtocol?
+    var type = 1
     
-    private lazy var label: UILabel = {
+    lazy var label: UILabel = {
         let label = UILabel()
         label.textColor = .zmDarkBlue
         label.text = "Choise"
+        label.textColor = .zmDarkBlue
+        label.isHidden = true
         
         return label
     }()
     
-    private lazy var stateImageView: UIImageView = {
+    lazy var myImageView: UIImageView = {
         let imageView = UIImageView()
-            imageView.image = .init(named: "Test")
+            imageView.image = .init(named: "")
+        imageView.isHidden = true
             
             return imageView
     }()
@@ -37,25 +42,24 @@ final class SingleMediaButton: UIButton {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     private func setup() {
         setupSubviews()
         setupConstraints()
     }
     
     private func setupSubviews() {
-        [label, stateImageView].forEach {
+        [label, myImageView].forEach {
             addSubview($0)
         }
     }
     
     private func setupConstraints() {
-        stateImageView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(56)
+        myImageView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
         label.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(stateImageView.snp.bottom).offset(44)
+            make.center.equalToSuperview()
         }
         
     }
@@ -82,7 +86,12 @@ final class SingleMediaButton: UIButton {
     
     @objc func checkState() {
         isSelected = true
-        self.delegate?.setOnClickButton(button: self)
+        if type == 1 {
+            self.delegate?.setOnClickButton(button: self)
+        } else {
+            self.secondDelegate?.setOnClickSecondButton(button: self)
+        }
+        
     }
 
 }
