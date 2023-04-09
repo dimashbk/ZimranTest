@@ -12,7 +12,7 @@ struct Constants {
 }
 
 final class HomeViewModel {
-    
+
     let networkService = NetworkService()
     var course = [Course]()
     var accessToken: String
@@ -40,6 +40,7 @@ final class HomeViewModel {
                 print("pizda")
             }
         }
+
     }
     
 }

@@ -93,7 +93,13 @@ final class QuizViewController: UIViewController {
         
         return view
     }()
-    
+    private func bindQuizVM() {
+        quizViewModel?.updateViewData = {
+            DispatchQueue.main.async {
+                self.quizCollectionView.reloadData()
+            }
+        }
+    }
     // MARK: - Lyfecicle funcs
     
     override func viewDidLoad() {
@@ -104,12 +110,14 @@ final class QuizViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.topItem?.title = "Stocks"
     }
+    
     // MARK: - Private funcs
     private func setup() {
         setupSubviews()
         setupConstraints()
         setupColors()
         setupNavigationController()
+        bindQuizVM()
     }
     
     private func setupColors() {
@@ -185,13 +193,13 @@ final class QuizViewController: UIViewController {
         if quizProgressView.progress == 1.0 {
             navigationController?.pushViewController(ResultViewController(), animated: true)
         }
-        if cellIndex < (quizViewModel!.arr.count - 1) && quizViewModel!.arr[cellIndex + 1].description() == "BooleanCollectionViewCell" {
+        if cellIndex < (quizViewModel!.lesson[0].questions.count - 1) && quizViewModel!.lesson[0].questions[cellIndex + 1].type == "BOOLEAN" {
             quizCollectionView.scrollToItem(at: IndexPath(row: cellIndex+1, section: 0), at: .right, animated: true)
             button.isHidden = true
             trueButton.isHidden = false
             falseButton.isHidden = false
             cellIndex += 1
-        } else if cellIndex < (quizViewModel!.arr.count - 1) {
+        } else if cellIndex < (quizViewModel!.lesson[0].questions.count - 1) {
             quizCollectionView.scrollToItem(at: IndexPath(row: cellIndex+1, section: 0), at: .right, animated: true)
             button.isHidden = false
             trueButton.isHidden = true

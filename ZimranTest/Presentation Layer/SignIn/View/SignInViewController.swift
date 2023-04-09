@@ -11,7 +11,7 @@ import Amplify
 
 final class SignInViewController: UIViewController {
     
-    let viewModel = AuthorizationService()
+    let authorizationService = AuthorizationService()
     
     private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
@@ -66,11 +66,8 @@ final class SignInViewController: UIViewController {
         super.viewDidLoad()
         setup()
         Task {
-            await viewModel.signOutLocally()
-            await viewModel.signIn(username: "dimash_test_assignment@zimran.io", password: "6f7vTJqLrzm96c3H7Phy3mMa")
-
-//            await viewModel.fetchCurrentAuthSession()
-    
+            await authorizationService.signOutLocally()
+            await authorizationService.signIn(username: "dimash_test_assignment@zimran.io", password: "6f7vTJqLrzm96c3H7Phy3mMa")
         }
     }
     
@@ -122,22 +119,22 @@ final class SignInViewController: UIViewController {
     }
     
     @objc func signUp() {
+        
         let homeVC = HomeViewController()
         Task {
             loginButton.isEnabled = false
-            await viewModel.signIn(username: emailTextField.text ?? "",
+            await authorizationService.signIn(username: emailTextField.text ?? "",
                                    password: passwordTextField.text ?? "")
-            await viewModel.fetchAccessToken()
-            await viewModel.fetchAttributes()
-            if viewModel.isSignedIn {
-                homeVC.homeViewModel = HomeViewModel(accessToken: viewModel.accessToken, userId: viewModel.userId)
+            await authorizationService.fetchAccessToken()
+            await authorizationService.fetchAttributes()
+            if authorizationService.isSignedIn {
+                homeVC.homeViewModel = HomeViewModel(accessToken: authorizationService.accessToken,
+                                                     userId: authorizationService.userId)
                 navigationController?.pushViewController(homeVC, animated: true)
                 loginButton.isEnabled = true
             } else {
                 loginButton.isEnabled = true
             }
-
-            print(viewModel.accessToken)
         }
 
     }

@@ -14,32 +14,34 @@ extension QuizViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return quizViewModel!.arr.count
+        if quizViewModel!.lesson.isEmpty {
+            return 0
+        } else {
+            return quizViewModel!.lesson[0].questions.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        switch indexPath.row {
-        case 0:
+        
+        switch quizViewModel!.lesson[0].questions[indexPath.row].type{
+        case "SINGLE_TEXT":
             guard let viewCell = collectionView.dequeueReusableCell(withReuseIdentifier: SingleTextCollectionViewCell.description(), for: indexPath) as? SingleTextCollectionViewCell else { return UICollectionViewCell() }
             return viewCell
-        case 1:
+        case "SINGLE_MEDIA":
             guard let viewCell = collectionView.dequeueReusableCell(withReuseIdentifier: SingleMediaCollectionViewCell.description(), for: indexPath) as? SingleMediaCollectionViewCell else { return UICollectionViewCell() }
             return viewCell
-        case 2:
+        case "BOOLEAN":
             guard let viewCell = collectionView.dequeueReusableCell(withReuseIdentifier: BooleanCollectionViewCell.description(), for: indexPath) as? BooleanCollectionViewCell else { return UICollectionViewCell() }
             return viewCell
-            
-        case 3:
+
+        case "GAP_FILL":
             guard let viewCell = collectionView.dequeueReusableCell(withReuseIdentifier:  MatchingCollectionViewCell.description(), for: indexPath) as?  MatchingCollectionViewCell else { return UICollectionViewCell() }
             return viewCell
-        case 4:
+        case "MATCHING":
             guard let viewCell = collectionView.dequeueReusableCell(withReuseIdentifier:  MatchingCollectionViewCell.description(), for: indexPath) as?  MatchingCollectionViewCell else { return UICollectionViewCell() }
             return viewCell
-        case 5:
-            guard let viewCell = collectionView.dequeueReusableCell(withReuseIdentifier: SingleMediaCollectionViewCell.description(), for: indexPath) as? SingleMediaCollectionViewCell else { return UICollectionViewCell() }
-            return viewCell
-        default: 
+        default:
             return UICollectionViewCell()
         }
         
