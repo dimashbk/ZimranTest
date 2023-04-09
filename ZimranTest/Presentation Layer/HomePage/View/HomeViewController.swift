@@ -9,8 +9,10 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    let viewModel = AuthorizationViewModel()
+    var viewModel = AuthorizationService()
+    var homeViewModel: HomeViewModel?
     
+
     private lazy var planetImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .init(named: "planet1")
@@ -37,6 +39,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        homeViewModel?.fetchCourse()
         
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -98,6 +101,11 @@ final class HomeViewController: UIViewController {
             }
     }
     @objc func moveToQuiz() {
-        navigationController?.pushViewController(QuizViewController(), animated: true)
+        let quizVC = QuizViewController()
+        quizVC.quizViewModel = QuizViewModel(topicId:  homeViewModel!.course[0].units[0].topics[0].id,
+                                             lessonId: homeViewModel!.course[0].units[0].topics[0].lessons[0].id,
+                                             accessToken: homeViewModel!.accessToken,
+                                             userId: homeViewModel!.userId)
+        navigationController?.pushViewController(quizVC, animated: true)
     }
 }

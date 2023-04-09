@@ -11,10 +11,11 @@ import AWSCognitoAuthPlugin
 import AWSCognitoIdentity
 import AWSPluginsCore
 
-class AuthorizationViewModel {
+final class AuthorizationService {
     
-    var accessToken = ""
     var isSignedIn = false
+    var accessToken = String()
+    var userId = String()
     
     func signIn(username: String, password: String) async {
         do {
@@ -88,7 +89,8 @@ class AuthorizationViewModel {
     func fetchAttributes() async {
         do {
             let attributes = try await Amplify.Auth.fetchUserAttributes()
-            print("User attributes - \(attributes)")
+//            print("User attributes - \(attributes)")
+            userId = attributes[3].value
         } catch let error as AuthError{
             print("Fetching user attributes failed with error \(error)")
         } catch {
@@ -103,7 +105,7 @@ class AuthorizationViewModel {
             // Get cognito user pool token
             if let cognitoTokenProvider = session as? AuthCognitoTokensProvider {
                 let tokens = try cognitoTokenProvider.getCognitoTokens().get()
-                print(tokens)
+//                print(tokens)
                 accessToken = tokens.accessToken
             }
         } catch let error as AuthError {

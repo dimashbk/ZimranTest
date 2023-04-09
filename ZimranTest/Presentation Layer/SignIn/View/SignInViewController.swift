@@ -11,7 +11,7 @@ import Amplify
 
 final class SignInViewController: UIViewController {
     
-    let viewModel = AuthorizationViewModel()
+    let viewModel = AuthorizationService()
     
     private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
@@ -70,9 +70,6 @@ final class SignInViewController: UIViewController {
             await viewModel.signIn(username: "dimash_test_assignment@zimran.io", password: "6f7vTJqLrzm96c3H7Phy3mMa")
 
 //            await viewModel.fetchCurrentAuthSession()
-//            await viewModel.fetchAttributes()
-            await viewModel.fetchAccessToken()
-            print(viewModel.accessToken)
     
         }
     }
@@ -125,13 +122,16 @@ final class SignInViewController: UIViewController {
     }
     
     @objc func signUp() {
+        let homeVC = HomeViewController()
         Task {
             loginButton.isEnabled = false
             await viewModel.signIn(username: emailTextField.text ?? "",
                                    password: passwordTextField.text ?? "")
             await viewModel.fetchAccessToken()
+            await viewModel.fetchAttributes()
             if viewModel.isSignedIn {
-                navigationController?.pushViewController(HomeViewController(), animated: true)
+                homeVC.homeViewModel = HomeViewModel(accessToken: viewModel.accessToken, userId: viewModel.userId)
+                navigationController?.pushViewController(homeVC, animated: true)
                 loginButton.isEnabled = true
             } else {
                 loginButton.isEnabled = true
@@ -139,6 +139,7 @@ final class SignInViewController: UIViewController {
 
             print(viewModel.accessToken)
         }
+
     }
     
 }

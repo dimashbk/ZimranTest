@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - Custom Button Settings
+
 enum ButtonStates {
     case rest
     case selected

@@ -14,7 +14,7 @@ protocol QuizCollectionViewCellDelegate: AnyObject {
 
 final class QuizViewController: UIViewController {
 
-    var quizViewModel = QuizViewModel()
+    var quizViewModel: QuizViewModel?
     var cellIndex = 0
     
     // MARK: - UI Elements
@@ -56,7 +56,7 @@ final class QuizViewController: UIViewController {
     
     lazy var button: UIButton = {
         let button = UIButton()
-        button.setTitle("Continue", for: .normal)
+        button.setTitle("Check", for: .normal)
         button.addTarget(self, action: #selector(nextButoon), for: .touchUpInside)
         button.backgroundColor = .zmPrimaryBlue
         button.layer.cornerRadius = 8
@@ -99,6 +99,7 @@ final class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        quizViewModel?.fetchLesson()
         navigationController?.navigationBar.barTintColor = .zmPrimaryBlue
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.topItem?.title = "Stocks"
@@ -181,13 +182,16 @@ final class QuizViewController: UIViewController {
     
     @objc func nextQuestion() {
         updateProgressView()
-        if cellIndex < (quizViewModel.arr.count - 1) && quizViewModel.arr[cellIndex + 1].description() == "BooleanCollectionViewCell" {
+        if quizProgressView.progress == 1.0 {
+            navigationController?.pushViewController(ResultViewController(), animated: true)
+        }
+        if cellIndex < (quizViewModel!.arr.count - 1) && quizViewModel!.arr[cellIndex + 1].description() == "BooleanCollectionViewCell" {
             quizCollectionView.scrollToItem(at: IndexPath(row: cellIndex+1, section: 0), at: .right, animated: true)
             button.isHidden = true
             trueButton.isHidden = false
             falseButton.isHidden = false
             cellIndex += 1
-        } else if cellIndex < (quizViewModel.arr.count - 1) {
+        } else if cellIndex < (quizViewModel!.arr.count - 1) {
             quizCollectionView.scrollToItem(at: IndexPath(row: cellIndex+1, section: 0), at: .right, animated: true)
             button.isHidden = false
             trueButton.isHidden = true

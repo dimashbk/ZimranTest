@@ -12,7 +12,7 @@
 		1D231D2029E16FE700F3C1A1 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D231D1F29E16FE700F3C1A1 /* ResultView.swift */; };
 		1D3196D429DF238200D1A8FA /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3196D329DF238200D1A8FA /* QuizViewController.swift */; };
 		1D3196D629DF258000D1A8FA /* QuizViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3196D529DF258000D1A8FA /* QuizViewController + Extension.swift */; };
-		1D5C723B29DC53BB00D96D5F /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C723A29DC53BB00D96D5F /* AuthorizationViewModel.swift */; };
+		1D5C723B29DC53BB00D96D5F /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C723A29DC53BB00D96D5F /* AuthorizationService.swift */; };
 		1D5C723E29DC663400D96D5F /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5C723D29DC663400D96D5F /* AWSAPIPlugin */; };
 		1D5C724029DC663400D96D5F /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5C723F29DC663400D96D5F /* AWSCognitoAuthPlugin */; };
 		1D5C724229DC663400D96D5F /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5C724129DC663400D96D5F /* AWSDataStorePlugin */; };
@@ -38,7 +38,14 @@
 		1DB7397C29E07EDD00F9A28A /* QuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7397B29E07EDD00F9A28A /* QuizButton.swift */; };
 		1DB7397E29E0869D00F9A28A /* BooleanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7397D29E0869D00F9A28A /* BooleanCollectionViewCell.swift */; };
 		1DD30DB229DD9CF300119EF1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD30DB129DD9CF300119EF1 /* HomeViewController.swift */; };
+		1DD3C1FB29E2803100201EBF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD3C1FA29E2803100201EBF /* HomeViewModel.swift */; };
+		1DD3C1FE29E2870D00201EBF /* clap_cosmo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1DD3C1FD29E2870D00201EBF /* clap_cosmo.json */; };
+		1DD3C20129E288B500201EBF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1DD3C20029E288B500201EBF /* Lottie */; };
+		1DD3C20629E2A6B700201EBF /* ResultScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD3C20529E2A6B700201EBF /* ResultScoreView.swift */; };
+		1DD3C20829E2CF1000201EBF /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD3C20729E2CF1000201EBF /* LessonModel.swift */; };
 		1DD6B52629E1CD6E001BB65C /* MatchingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD6B52529E1CD6E001BB65C /* MatchingButton.swift */; };
+		1DDB035F29E1F15A003A22F4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB035E29E1F15A003A22F4 /* NetworkService.swift */; };
+		1DDB036129E27CA0003A22F4 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB036029E27CA0003A22F4 /* ResultViewController.swift */; };
 		1DDB459629E01B04000255AE /* SingleTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB459529E01B04000255AE /* SingleTextCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +55,7 @@
 		1D231D1F29E16FE700F3C1A1 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		1D3196D329DF238200D1A8FA /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		1D3196D529DF258000D1A8FA /* QuizViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizViewController + Extension.swift"; sourceTree = "<group>"; };
-		1D5C723A29DC53BB00D96D5F /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
+		1D5C723A29DC53BB00D96D5F /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		1D5C724B29DC7FCF00D96D5F /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		1D5C724C29DC7FCF00D96D5F /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		1D66BF7D29DC1D24006EE621 /* ZimranTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZimranTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +77,13 @@
 		1DB7397B29E07EDD00F9A28A /* QuizButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizButton.swift; sourceTree = "<group>"; };
 		1DB7397D29E0869D00F9A28A /* BooleanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooleanCollectionViewCell.swift; sourceTree = "<group>"; };
 		1DD30DB129DD9CF300119EF1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1DD3C1FA29E2803100201EBF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		1DD3C1FD29E2870D00201EBF /* clap_cosmo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clap_cosmo.json; sourceTree = "<group>"; };
+		1DD3C20529E2A6B700201EBF /* ResultScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScoreView.swift; sourceTree = "<group>"; };
+		1DD3C20729E2CF1000201EBF /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
 		1DD6B52529E1CD6E001BB65C /* MatchingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingButton.swift; sourceTree = "<group>"; };
+		1DDB035E29E1F15A003A22F4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		1DDB036029E27CA0003A22F4 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		1DDB459529E01B04000255AE /* SingleTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D5C723E29DC663400D96D5F /* AWSAPIPlugin in Frameworks */,
+				1DD3C20129E288B500201EBF /* Lottie in Frameworks */,
 				1D66BFA829DC257C006EE621 /* SnapKit in Frameworks */,
 				1D5C724429DC663400D96D5F /* AWSPinpointPushNotificationsPlugin in Frameworks */,
 				1D5C724629DC663400D96D5F /* Amplify in Frameworks */,
@@ -102,7 +116,7 @@
 		1D2DBC3E29DD59C9003E80F2 /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
-				1DB7396F29E02FE700F9A28A /* Models */,
+				1DDB035E29E1F15A003A22F4 /* NetworkService.swift */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -119,7 +133,7 @@
 		1D5C723929DC471700D96D5F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1D5C723A29DC53BB00D96D5F /* AuthorizationViewModel.swift */,
+				1D5C723A29DC53BB00D96D5F /* AuthorizationService.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -165,9 +179,10 @@
 		1D66BF9529DC1E85006EE621 /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
-				1D3196D229DF231F00D1A8FA /* Quiz */,
-				1DD30DAE29DD9CD200119EF1 /* HomePage */,
 				1D66BF9729DC1ED5006EE621 /* SignIn */,
+				1DD30DAE29DD9CD200119EF1 /* HomePage */,
+				1D3196D229DF231F00D1A8FA /* Quiz */,
+				1DDB035D29E1EE51003A22F4 /* ResultPage */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
@@ -175,6 +190,8 @@
 		1D66BF9629DC1EA9006EE621 /* Core Layer */ = {
 			isa = PBXGroup;
 			children = (
+				1DD3C1FC29E2870200201EBF /* Animations */,
+				1DB7396F29E02FE700F9A28A /* Models */,
 				1D66BFAC29DC29C3006EE621 /* Custom */,
 				1D66BFAB29DC273A006EE621 /* Resources */,
 				1D66BFA529DC24A5006EE621 /* Extensions */,
@@ -229,10 +246,11 @@
 		1D66BFAC29DC29C3006EE621 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				1DD3C20429E2A69300201EBF /* CustomTextFields */,
+				1DD3C20329E2A68400201EBF /* CustomButtons */,
+				1DD3C20229E2A67700201EBF /* CustomViews */,
 				1D231D1E29E16D3400F3C1A1 /* PopUpViews */,
 				1DB7397829E07BD200F9A28A /* QuizButtons */,
-				1D66BFAD29DC29DB006EE621 /* AuthorizationTextField.swift */,
-				1D66BFB029DC317A006EE621 /* MyButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -241,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				1DB7397029E032C600F9A28A /* MainModel.swift */,
+				1DD3C20729E2CF1000201EBF /* LessonModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,9 +296,66 @@
 		1DD30DAE29DD9CD200119EF1 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				1DD30DB129DD9CF300119EF1 /* HomeViewController.swift */,
+				1DD3C1F829E2800000201EBF /* View */,
+				1DD3C1F529E27FE700201EBF /* ViewModel */,
 			);
 			path = HomePage;
+			sourceTree = "<group>";
+		};
+		1DD3C1F529E27FE700201EBF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1DD3C1FA29E2803100201EBF /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1DD3C1F829E2800000201EBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DD30DB129DD9CF300119EF1 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DD3C1FC29E2870200201EBF /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				1DD3C1FD29E2870D00201EBF /* clap_cosmo.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		1DD3C20229E2A67700201EBF /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				1DD3C20529E2A6B700201EBF /* ResultScoreView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		1DD3C20329E2A68400201EBF /* CustomButtons */ = {
+			isa = PBXGroup;
+			children = (
+				1D66BFB029DC317A006EE621 /* MyButton.swift */,
+			);
+			path = CustomButtons;
+			sourceTree = "<group>";
+		};
+		1DD3C20429E2A69300201EBF /* CustomTextFields */ = {
+			isa = PBXGroup;
+			children = (
+				1D66BFAD29DC29DB006EE621 /* AuthorizationTextField.swift */,
+			);
+			path = CustomTextFields;
+			sourceTree = "<group>";
+		};
+		1DDB035D29E1EE51003A22F4 /* ResultPage */ = {
+			isa = PBXGroup;
+			children = (
+				1DDB036029E27CA0003A22F4 /* ResultViewController.swift */,
+			);
+			path = ResultPage;
 			sourceTree = "<group>";
 		};
 		1DDB459429E01ABF000255AE /* Cells */ = {
@@ -325,6 +401,7 @@
 				1D5C724129DC663400D96D5F /* AWSDataStorePlugin */,
 				1D5C724329DC663400D96D5F /* AWSPinpointPushNotificationsPlugin */,
 				1D5C724529DC663400D96D5F /* Amplify */,
+				1DD3C20029E288B500201EBF /* Lottie */,
 			);
 			productName = ZimranTest;
 			productReference = 1D66BF7D29DC1D24006EE621 /* ZimranTest.app */;
@@ -357,6 +434,7 @@
 			packageReferences = (
 				1D66BFA629DC257C006EE621 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				1D5C723C29DC663400D96D5F /* XCRemoteSwiftPackageReference "amplify-swift" */,
+				1DD3C1FF29E288B500201EBF /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 1D66BF7E29DC1D24006EE621 /* Products */;
 			projectDirPath = "";
@@ -379,6 +457,7 @@
 				1D66BFA429DC2419006EE621 /* Inter-SemiBold.ttf in Resources */,
 				1D66BF8A29DC1D25006EE621 /* Assets.xcassets in Resources */,
 				1D5C724E29DC7FCF00D96D5F /* amplifyconfiguration.json in Resources */,
+				1DD3C1FE29E2870D00201EBF /* clap_cosmo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +473,9 @@
 				1DB7397C29E07EDD00F9A28A /* QuizButton.swift in Sources */,
 				1D231D2029E16FE700F3C1A1 /* ResultView.swift in Sources */,
 				1D66BFAE29DC29DB006EE621 /* AuthorizationTextField.swift in Sources */,
-				1D5C723B29DC53BB00D96D5F /* AuthorizationViewModel.swift in Sources */,
+				1DD3C1FB29E2803100201EBF /* HomeViewModel.swift in Sources */,
+				1D5C723B29DC53BB00D96D5F /* AuthorizationService.swift in Sources */,
+				1DD3C20829E2CF1000201EBF /* LessonModel.swift in Sources */,
 				1D3196D429DF238200D1A8FA /* QuizViewController.swift in Sources */,
 				1D66BFB129DC317A006EE621 /* MyButton.swift in Sources */,
 				1D3196D629DF258000D1A8FA /* QuizViewController + Extension.swift in Sources */,
@@ -402,6 +483,8 @@
 				1DB7397129E032C600F9A28A /* MainModel.swift in Sources */,
 				1D231D1D29E1584C00F3C1A1 /* MatchingCollectionViewCell.swift in Sources */,
 				1D66BF9A29DC1EF3006EE621 /* SignInViewController.swift in Sources */,
+				1DD3C20629E2A6B700201EBF /* ResultScoreView.swift in Sources */,
+				1DDB035F29E1F15A003A22F4 /* NetworkService.swift in Sources */,
 				1DB7397429E03F5C00F9A28A /* SingleTextButton.swift in Sources */,
 				1DD6B52629E1CD6E001BB65C /* MatchingButton.swift in Sources */,
 				1DDB459629E01B04000255AE /* SingleTextCollectionViewCell.swift in Sources */,
@@ -409,6 +492,7 @@
 				1D231D1B29E0920500F3C1A1 /* QuizViewModel.swift in Sources */,
 				1D66BF8129DC1D24006EE621 /* AppDelegate.swift in Sources */,
 				1DB7397729E07B5A00F9A28A /* SingleMediaCollectionViewCell.swift in Sources */,
+				1DDB036129E27CA0003A22F4 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +720,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		1DD3C1FF29E288B500201EBF /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -668,6 +760,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1D66BFA629DC257C006EE621 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		1DD3C20029E288B500201EBF /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DD3C1FF29E288B500201EBF /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
