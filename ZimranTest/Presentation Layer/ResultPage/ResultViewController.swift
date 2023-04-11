@@ -16,6 +16,7 @@ class ResultViewController: UIViewController {
         let label = UILabel()
         label.text = "Lesson complete!"
         label.font = UIFont(name: "Inter-SemiBold", size: 24)
+        label.textColor = .white
         
         return label
     }()

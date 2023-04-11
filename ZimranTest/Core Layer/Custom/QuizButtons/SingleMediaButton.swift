@@ -7,23 +7,22 @@
 
 import UIKit
 
-final class SingleMediaButton: UIButton {
+class SingleMediaButton: UIButton {
     
     var delegate: ButtonStateProtocol?
-    
-    private lazy var label: UILabel = {
+
+    lazy var label: UILabel = {
         let label = UILabel()
         label.textColor = .zmDarkBlue
-        label.text = "Choise"
         
         return label
     }()
     
-    private lazy var stateImageView: UIImageView = {
+    var stateImageView: UIImageView = {
         let imageView = UIImageView()
-            imageView.image = .init(named: "Test")
-            
-            return imageView
+        imageView.image = .init(named: "Test")
+        
+        return imageView
     }()
     
     override init(frame: CGRect) {
@@ -40,6 +39,9 @@ final class SingleMediaButton: UIButton {
     private func setup() {
         setupSubviews()
         setupConstraints()
+//        fetchImage3()
+//        let imageURL = "https://via.placeholder.com/150/771796"
+//        self.stateImageView.setImage(imageUrl: imageURL)
     }
     
     private func setupSubviews() {
@@ -47,10 +49,15 @@ final class SingleMediaButton: UIButton {
             addSubview($0)
         }
     }
+    func fetchImage3(){
+        let imageURL = URL(string: "https://d16u1tlpnq9jj6.cloudfront.net/choices/3652543b-dbea-4865-b482-05c70d00e663_742001ae-bd27-4b33-a2cf-d40ef6d807df_d6369b90-7d96-401b-8d9d-857739d14f14_5ef914bb-9d51-4766-acda-dbc9d83059de_460d4ef4-b715-4658-8879-14270d3e7c54.svg")!
+            stateImageView.kf.setImage(with: imageURL, options: [.processor(SVGImgProcessor())])
+    }
     
     private func setupConstraints() {
         stateImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
+            make.height.width.equalTo(64)
             make.top.equalToSuperview().inset(56)
         }
         label.snp.makeConstraints { make in
@@ -86,3 +93,5 @@ final class SingleMediaButton: UIButton {
     }
 
 }
+
+

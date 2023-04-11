@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 final class SingleMediaCollectionViewCell: UICollectionViewCell, ButtonStateProtocol {
     
@@ -13,9 +14,16 @@ final class SingleMediaCollectionViewCell: UICollectionViewCell, ButtonStateProt
         return "SingleMediaCollectionViewCell"
     }
     
+    var isCorrect = Bool()
+    
+    var singleMediaViewModel = SingleMediaViewModel()
+    
+    var getCorrectnessDelegate: GetCorrectness?
+    
     var onClickButton = UIButton()
     
-    private lazy var textLabel: UILabel = {
+    
+    lazy var textLabel: UILabel = {
         let label = UILabel()
         label.textColor = .zmDarkBlue
         label.numberOfLines = 0
@@ -24,7 +32,7 @@ final class SingleMediaCollectionViewCell: UICollectionViewCell, ButtonStateProt
         return label
     }()
     
-    private lazy var firstButton: SingleMediaButton = {
+    lazy var firstButton: SingleMediaButton = {
         let button = SingleMediaButton()
         button.delegate = self
         button.addTarget(self, action: #selector(changeState), for: .touchUpInside)
@@ -112,17 +120,26 @@ final class SingleMediaCollectionViewCell: UICollectionViewCell, ButtonStateProt
         onClickButton = button
     }
     
-    @objc func changeState() {
-        [firstButton, secondButton, thirdButton, fourthButton].forEach { SingleTextButton in
-            if SingleTextButton == onClickButton {
-                SingleTextButton.changeState(state: .selected)
-            } else {
-                SingleTextButton.changeState(state: .rest)
-            }
+    func configureCell(choises: [Choice], questionText: String) {
+        self.textLabel.text = questionText
+        for (index, option) in [firstButton,secondButton,thirdButton,fourthButton].enumerated() {
+            let imageURL = URL(string: "\(choises[index].image)")!
+            option.stateImageView.kf.setImage(with: imageURL, options: [.processor(SVGImgProcessor())])
+            let choiseText = choises[index].text
+            option.label.text = choiseText
+            singleMediaViewModel.getCorrectAnswer(choises: choises)
+           
         }
     }
     
-    
-
-    
+    @objc func changeState() {
+        [firstButton, secondButton, thirdButton, fourthButton].forEach { SingleMediaButton in
+            if SingleMediaButton == onClickButton {
+                SingleMediaButton.changeState(state: .selected)
+                getCorrectnessDelegate?.getCorrectBoolean(isCorrect: singleMediaViewModel.getCorretness(chosenButton: onClickButton as! SingleMediaButton), correctAnswer: singleMediaViewModel.correctAnswer)
+            } else {
+                SingleMediaButton.changeState(state: .rest)
+            }
+        }
+    }
 }

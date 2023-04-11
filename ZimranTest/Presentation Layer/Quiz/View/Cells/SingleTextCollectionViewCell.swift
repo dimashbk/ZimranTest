@@ -7,13 +7,16 @@
 
 import UIKit
 
-
-
 final class SingleTextCollectionViewCell: UICollectionViewCell , ButtonStateProtocol{
     
     override class func description() -> String {
         return "SingleTextCollectionViewCell"
     }
+    var isCorrect = Bool()
+    
+    var singleTextViewModel = SingleTextViewModel()
+    
+    var getCorrectnessDelegate: GetCorrectness?
     
     var onClickButton = UIButton()
     
@@ -25,8 +28,6 @@ final class SingleTextCollectionViewCell: UICollectionViewCell , ButtonStateProt
         
         return label
     }()
-    
-    
     
     private lazy var firstButton: SingleTextButton = {
         let button = SingleTextButton()
@@ -71,10 +72,12 @@ final class SingleTextCollectionViewCell: UICollectionViewCell , ButtonStateProt
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     private func setup() {
         setupSubviews()
         setupConstraints()
     }
+    
     private func setupSubviews() {
         [textLabel, firstButton, secondButton, thirdButton, fourthButton].forEach {
             contentView.addSubview($0)
@@ -111,6 +114,16 @@ final class SingleTextCollectionViewCell: UICollectionViewCell , ButtonStateProt
             make.height.equalTo(56)
         }
     }
+    func configureCell(choises: [Choice], questionText: String) {
+        self.textLabel.text = questionText
+
+        for (index, option) in [firstButton,secondButton,thirdButton,fourthButton].enumerated() {
+            let choiseText = choises[index].text
+            option.label.text = choiseText
+        }
+        singleTextViewModel.getCorrectAnswer(choises: choises)
+
+    }
     
     func setOnClickButton(button: UIButton) {
         onClickButton = button
@@ -120,6 +133,7 @@ final class SingleTextCollectionViewCell: UICollectionViewCell , ButtonStateProt
         [firstButton, secondButton, thirdButton, fourthButton].forEach { SingleTextButton in
             if SingleTextButton == onClickButton {
                 SingleTextButton.changeState(state: .selected)
+                getCorrectnessDelegate?.getCorrectBoolean(isCorrect: singleTextViewModel.getCorretness(chosenButton: onClickButton as! SingleTextButton), correctAnswer: singleTextViewModel.correctAnswer)
             } else {
                 SingleTextButton.changeState(state: .rest)
             }

@@ -12,7 +12,7 @@ class SingleTextButton: UIButton {
     
     var delegate: ButtonStateProtocol?
     
-    private lazy var label: UILabel = {
+    lazy var label: UILabel = {
         let label = UILabel()
         label.textColor = .zmDarkBlue
         label.text = "Choise"

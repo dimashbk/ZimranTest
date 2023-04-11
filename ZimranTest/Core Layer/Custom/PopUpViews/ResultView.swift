@@ -16,7 +16,7 @@ final class ResultView: UIView {
     }()
     private lazy var firstLabel: UILabel = {
         let label = UILabel()
-        label.text = "Amazing"
+
         label.textColor = .zmGreen
         label.font = UIFont(name: "Inter-SemiBold", size: 20)
         
@@ -25,7 +25,6 @@ final class ResultView: UIView {
     
     private lazy var secondLabel: UILabel = {
         let label = UILabel()
-        label.text = "fkfkfkk kfkfkfk fkfkkfkf"
         label.textColor = .zmDarkBlue
         label.font = UIFont(name: "Inter-Medium", size: 14)
         
@@ -36,7 +35,6 @@ final class ResultView: UIView {
     lazy var continueButton: UIButton = {
         let button = UIButton()
         button.setTitle("Continue", for: .normal)
-        button.backgroundColor = .zmGreen
         button.layer.cornerRadius = 8
         
         return button
@@ -61,6 +59,23 @@ final class ResultView: UIView {
     private func setupSubviews() {
         [firstLabel, secondLabel, continueButton, line].forEach {
             addSubview($0)
+        }
+    }
+    
+    func configureResultView(isCorrect: Bool, correctAnswer: String) {
+        if isCorrect {
+            line.backgroundColor = .zmGreen
+            firstLabel.text = "Amazing"
+            firstLabel.textColor = .zmGreen
+            secondLabel.text = "Good Job"
+            continueButton.backgroundColor = .zmGreen
+        } else {
+            line.backgroundColor = .zmRed
+            firstLabel.text = "Correct Solution:"
+            secondLabel.text = "\(correctAnswer)"
+            firstLabel.textColor = .zmRed
+            continueButton.backgroundColor = .zmRed
+            
         }
     }
     

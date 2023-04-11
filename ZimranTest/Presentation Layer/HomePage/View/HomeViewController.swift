@@ -22,6 +22,7 @@ final class HomeViewController: UIViewController {
     
     private lazy var stocksButton: UIButton = {
         let button = UIButton()
+        button.isEnabled = false
         button.setImage(.init(named: "stockButtonCenter"), for: .normal)
         button.addTarget(self, action: #selector(moveToQuiz), for: .touchUpInside)
         
@@ -55,12 +56,8 @@ final class HomeViewController: UIViewController {
         setupSubviews()
         setupColors()
         setupConstraints()
-        setupViews()
         setupNavigationController()
-    }
-    
-    private func setupViews() {
-        
+        bindHomeVM()
     }
     
     private func setupSubviews() {
@@ -93,6 +90,14 @@ final class HomeViewController: UIViewController {
             make.centerX.equalTo(stocksButton.snp.centerX)
         }
     }
+    
+    private func bindHomeVM() {
+        homeViewModel?.callback = {
+            DispatchQueue.main.async {
+                self.stocksButton.isEnabled = true
+            }
+        }
+    }
    @objc func signOut() {
             navigationController?.popViewController(animated: true)
             Task {
@@ -103,7 +108,7 @@ final class HomeViewController: UIViewController {
     @objc func moveToQuiz() {
         let quizVC = QuizViewController()
         quizVC.quizViewModel = QuizViewModel(topicId:  homeViewModel!.course[0].units[0].topics[0].id,
-                                             lessonId: homeViewModel!.course[0].units[0].topics[0].lessons[0].id,
+                                             lessonId: homeViewModel!.course[0].units[0].topics[0].lessons[1].id,
                                              accessToken: homeViewModel!.accessToken,
                                              userId: homeViewModel!.userId)
         navigationController?.pushViewController(quizVC, animated: true)

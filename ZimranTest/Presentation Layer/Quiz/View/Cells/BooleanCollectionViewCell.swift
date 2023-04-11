@@ -17,7 +17,6 @@ final class BooleanCollectionViewCell: UICollectionViewCell {
     private lazy var textLabel: UILabel = {
         let label = UILabel()
         label.textColor = .zmDarkBlue
-        label.text = "When a business wants to expand and requires additional money, it can issue stocks."
         label.textAlignment = .center
         label.numberOfLines = 0
         label.font = UIFont(name: "Inter-SemiBold", size: 22)
@@ -27,10 +26,14 @@ final class BooleanCollectionViewCell: UICollectionViewCell {
     
     private lazy var myImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .init(named: "Test2")
         
         return imageView
     }()
+    
+    override func prepareForReuse() {
+        textLabel.text = nil
+        myImageView.image = nil
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,6 +56,16 @@ final class BooleanCollectionViewCell: UICollectionViewCell {
             contentView.addSubview($0)
         }
     }
+    func configureCell(choises: [Choice], questionText: String, questionImage: String) {
+        self.textLabel.text = questionText
+        
+        if questionImage.count > 1 {
+            let imageURL = URL(string: "\(questionImage)")!
+
+            myImageView.kf.setImage(with: imageURL, options: [.processor(SVGImgProcessor())])
+        }
+        
+    }
     
     private func setupConstraints() {
         textLabel.snp.makeConstraints { make in
@@ -61,6 +74,7 @@ final class BooleanCollectionViewCell: UICollectionViewCell {
         }
         myImageView.snp.makeConstraints { make in
             make.top.equalTo(textLabel.snp.bottom).offset(24)
+            make.height.width.equalTo(200)
             make.centerX.equalToSuperview()
         }
     }

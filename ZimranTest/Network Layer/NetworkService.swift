@@ -48,11 +48,10 @@ final class NetworkService {
     }
     func obtainLesson(url: URL, accessToken: String ,completion: @escaping(fetchLessonResult) -> Void) {
         
-
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        
+        print(url)
         session.dataTask(with: request) { [weak self] data, response, error in
             var result: fetchLessonResult
             

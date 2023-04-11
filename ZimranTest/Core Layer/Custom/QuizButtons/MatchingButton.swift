@@ -13,10 +13,11 @@ final class MatchingButton: UIButton {
     var secondDelegate: SecondButtonStateProtocol?
     var type = 1
     
+    var choise: Choice?
+    
     lazy var label: UILabel = {
         let label = UILabel()
         label.textColor = .zmDarkBlue
-        label.text = "Choise"
         label.textColor = .zmDarkBlue
         label.isHidden = true
         
@@ -25,7 +26,6 @@ final class MatchingButton: UIButton {
     
     lazy var myImageView: UIImageView = {
         let imageView = UIImageView()
-            imageView.image = .init(named: "")
         imageView.isHidden = true
             
             return imageView
@@ -57,6 +57,7 @@ final class MatchingButton: UIButton {
     private func setupConstraints() {
         myImageView.snp.makeConstraints { make in
             make.center.equalToSuperview()
+            make.height.width.equalTo(40)
         }
         label.snp.makeConstraints { make in
             make.center.equalToSuperview()
@@ -77,9 +78,13 @@ final class MatchingButton: UIButton {
             self.layer.borderColor = UIColor.zmPrimaryBlue.cgColor
             self.backgroundColor = UIColor.zmSelectedQuizChoises
         case .correct:
-            print("correct")
+            self.layer.borderWidth = 2
+            self.layer.borderColor = UIColor.zmGreen.cgColor
+//            self.backgroundColor = UIColor.zmSelectedQuizChoises
         case .incorrect:
-            print("incorrect")
+            self.layer.borderWidth = 2
+            self.layer.borderColor = UIColor.zmRed.cgColor
+            
         }
         
     }

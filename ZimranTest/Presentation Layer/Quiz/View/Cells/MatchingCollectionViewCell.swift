@@ -12,13 +12,20 @@ final class MatchingCollectionViewCell: UICollectionViewCell, ButtonStateProtoco
     override class func description() -> String {
         return "MatchingCollectionViewCell"
     }
+    var isCorrect = false
+    var correctAnswerCount = 0
     
     var onClickFirstButton = UIButton()
     var onClickSecondButton = UIButton()
     
-    lazy var myLabel: UILabel = {
+    var getCorrectnessDelegate: GetCorrectness?
+    var matchingViewModel = MatchingViewModel()
+    var buttonsOrdering = ButtonsOrdering()
+    
+    
+    
+    lazy var textLabel: UILabel = {
         let label = UILabel()
-        label.text = "dkdk dkkdk dkfn"
         label.textColor = .zmDarkBlue
         label.font = UIFont(name: "Inter-SemiBold", size: 22)
         
@@ -121,6 +128,24 @@ final class MatchingCollectionViewCell: UICollectionViewCell, ButtonStateProtoco
         return button
     }()
     
+    override func prepareForReuse() {
+        textLabel.text = nil
+        for button in [firstImageButton,firstLabelButton,
+                                secondImageButton,secondLabelButton,
+                                thirdImageButton, thirdLabelButton,
+                                fourthImageButton,fourthLabelButton,
+                                fifthImageButton,fifthLabelButton] {
+
+            button.isEnabled = true
+            button.alpha = 1
+            onClickFirstButton.isSelected = false
+            onClickSecondButton.isSelected = false
+            onClickFirstButton = UIButton()
+            onClickSecondButton = UIButton()
+            matchingViewModel.correctMatchCount = 0
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.cornerRadius = 8
@@ -138,7 +163,7 @@ final class MatchingCollectionViewCell: UICollectionViewCell, ButtonStateProtoco
     }
     
     private func setupSubviews() {
-        [myLabel,
+        [textLabel,
          firstLabelButton,
          secondLabelButton,
          thirdLabelButton,
@@ -154,12 +179,12 @@ final class MatchingCollectionViewCell: UICollectionViewCell, ButtonStateProtoco
     }
     
     private func setupConstraints() {
-        myLabel.snp.makeConstraints { make in
+        textLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(24)
             make.left.right.equalToSuperview().inset(16)
         }
         firstImageButton.snp.makeConstraints { make in
-            make.top.equalTo(myLabel.snp.bottom).offset(24)
+            make.top.equalTo(textLabel.snp.bottom).offset(24)
             make.left.equalToSuperview().inset(16)
             make.width.equalTo((contentView.bounds.width - 42) / 2)
             make.height.equalTo(68)
@@ -189,7 +214,7 @@ final class MatchingCollectionViewCell: UICollectionViewCell, ButtonStateProtoco
             make.height.equalTo(68)
         }
         firstLabelButton.snp.makeConstraints { make in
-            make.top.equalTo(myLabel.snp.bottom).offset(24)
+            make.top.equalTo(textLabel.snp.bottom).offset(24)
             make.right.equalToSuperview().inset(16)
             make.width.equalTo((contentView.bounds.width - 42) / 2)
             make.height.equalTo(68)
@@ -219,6 +244,26 @@ final class MatchingCollectionViewCell: UICollectionViewCell, ButtonStateProtoco
             make.height.equalTo(68)
         }
     }
+    func configureCell(choises: [Choice], questionText: String) {
+        self.textLabel.text = questionText
+        for (index, option) in [firstImageButton,firstLabelButton,
+                                secondImageButton,secondLabelButton,
+                                thirdImageButton, thirdLabelButton,
+                                fourthImageButton,fourthLabelButton,
+                                fifthImageButton,fifthLabelButton].enumerated() {
+            option.choise = choises[index]
+            if choises[index].text.count > 0 {
+                let choiseText = choises[index].text
+                option.label.text = choiseText
+            }
+            else {
+                let imageURL = URL(string: "\(choises[index].image)")!
+                DispatchQueue.global(qos: .userInteractive).async {
+                    option.myImageView.kf.setImage(with: imageURL, options: [.processor(SVGImgProcessor())])
+                }
+            }
+        }
+    }
     
     func setOnClickButton(button: UIButton) {
         onClickFirstButton = button
@@ -231,6 +276,7 @@ final class MatchingCollectionViewCell: UICollectionViewCell, ButtonStateProtoco
         [firstImageButton, secondImageButton, thirdImageButton, fourthImageButton , fifthImageButton].forEach { SingleTextButton in
             if SingleTextButton == onClickFirstButton {
                 SingleTextButton.changeState(state: .selected)
+                buttonsOrdering.imageButton = onClickFirstButton as! MatchingButton
             } else {
                 SingleTextButton.changeState(state: .rest)
             }
@@ -238,12 +284,32 @@ final class MatchingCollectionViewCell: UICollectionViewCell, ButtonStateProtoco
         [firstLabelButton, secondLabelButton, thirdLabelButton, fourthLabelButton , fifthLabelButton].forEach { SingleTextButton in
             if SingleTextButton == onClickSecondButton {
                 SingleTextButton.changeState(state: .selected)
+                buttonsOrdering.labelButton = onClickSecondButton as! MatchingButton
             } else {
                 SingleTextButton.changeState(state: .rest)
             }
         }
+        if buttonsOrdering.imageButton != nil && buttonsOrdering.labelButton != nil {
+            if matchingViewModel.getResult(buttons: buttonsOrdering) {
+                buttonsOrdering.imageButton = nil
+                buttonsOrdering.labelButton = nil
+                onClickFirstButton.isEnabled = false
+                onClickFirstButton.alpha = 0.2
+                onClickSecondButton.isEnabled = false
+                onClickSecondButton.alpha = 0.2
+                onClickFirstButton = UIButton()
+                onClickSecondButton = UIButton()
+            } else {
+                buttonsOrdering.imageButton = nil
+                buttonsOrdering.labelButton = nil
+                onClickFirstButton.isEnabled = false
+                onClickFirstButton.alpha = 0.2
+                onClickSecondButton.isEnabled = false
+                onClickSecondButton.alpha = 0.2
+                onClickFirstButton = UIButton()
+                onClickSecondButton = UIButton()
+            }
+        }
+        getCorrectnessDelegate?.getCorrectBoolean(isCorrect: matchingViewModel.getCorretness(), correctAnswer: matchingViewModel.correctAnswer)
     }
-    
-    
-    
 }

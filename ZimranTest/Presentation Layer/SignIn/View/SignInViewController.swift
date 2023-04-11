@@ -126,6 +126,7 @@ final class SignInViewController: UIViewController {
             await authorizationService.signIn(username: emailTextField.text ?? "",
                                    password: passwordTextField.text ?? "")
             await authorizationService.fetchAccessToken()
+            print(authorizationService.accessToken)
             await authorizationService.fetchAttributes()
             if authorizationService.isSignedIn {
                 homeVC.homeViewModel = HomeViewModel(accessToken: authorizationService.accessToken,

@@ -12,6 +12,8 @@ struct Constants {
 }
 
 final class HomeViewModel {
+    
+    var callback: (() -> ())?
 
     let networkService = NetworkService()
     var course = [Course]()
@@ -22,19 +24,17 @@ final class HomeViewModel {
         self.accessToken = accessToken
         self.userId = userId
     }
-    
-    
 
     func fetchCourse() {
         let myUrl = URL(string: Constants.baseUrl + "/units/?user_id=\(userId)")!
-        
-
+    
         networkService.obtainCourse(url: myUrl,
                                     accessToken: accessToken) { [weak self] (result) in
             switch result{
             case .success(let posts):
                 self?.course.append(posts)
                 print(self?.course[0].units as Any)
+                self?.callback?()
             case .failure(let error):
                 print(error.localizedDescription)
                 print("pizda")

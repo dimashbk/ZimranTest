@@ -29,20 +29,18 @@ final class QuizViewModel {
     func fetchLesson() {
     
         let myUrl = URL(string: Constants.baseUrl + "/topics/\(topicId)/lessons/\(lessonId)/questions/?user_id=\(userId)")!
- 
+        print(myUrl)
         networkService.obtainLesson(url: myUrl,
                                     accessToken: accessToken) { [weak self] (result) in
             switch result{
             case .success(let posts):
                 self?.lesson.append(posts)
-                print(self?.lesson[0].questions as Any)
+                print(self?.lesson[0].questions.count as Any)
                 self?.updateViewData?()
             case .failure(let error):
                 print(error.localizedDescription)
-                print("pizda")
             }
         }
-        
     }
 
 }

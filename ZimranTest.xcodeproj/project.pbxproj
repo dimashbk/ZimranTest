@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0C84AF29E53DCA0025B9CA /* Kingfisher Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C84AE29E53DCA0025B9CA /* Kingfisher Extension.swift */; };
+		1D0C84B129E55FA70025B9CA /* BooleanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C84B029E55FA70025B9CA /* BooleanViewModel.swift */; };
+		1D0C84B429E571750025B9CA /* SingleTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C84B329E571750025B9CA /* SingleTextViewModel.swift */; };
+		1D0C84B729E584960025B9CA /* GetCorrect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C84B629E584960025B9CA /* GetCorrect.swift */; };
+		1D0C84BA29E5860B0025B9CA /* SingleMediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C84B929E5860B0025B9CA /* SingleMediaViewModel.swift */; };
+		1D0C84BD29E58B3D0025B9CA /* MatchingVewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C84BC29E58B3D0025B9CA /* MatchingVewModel.swift */; };
 		1D231D1B29E0920500F3C1A1 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D231D1A29E0920500F3C1A1 /* QuizViewModel.swift */; };
 		1D231D1D29E1584C00F3C1A1 /* MatchingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D231D1C29E1584C00F3C1A1 /* MatchingCollectionViewCell.swift */; };
 		1D231D2029E16FE700F3C1A1 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D231D1F29E16FE700F3C1A1 /* ResultView.swift */; };
@@ -31,6 +37,9 @@
 		1D66BFAA29DC263B006EE621 /* Colors + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D66BFA929DC263B006EE621 /* Colors + Extension.swift */; };
 		1D66BFAE29DC29DB006EE621 /* AuthorizationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D66BFAD29DC29DB006EE621 /* AuthorizationTextField.swift */; };
 		1D66BFB129DC317A006EE621 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D66BFB029DC317A006EE621 /* MyButton.swift */; };
+		1D945A5929E41B9800791617 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1D945A5829E41B9800791617 /* Kingfisher */; };
+		1D945A5C29E42CB200791617 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1D945A5B29E42CB200791617 /* SVGKit */; };
+		1D945A5E29E42CCC00791617 /* Kingfisher + SBGKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D945A5D29E42CCC00791617 /* Kingfisher + SBGKit.swift */; };
 		1DB7397129E032C600F9A28A /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7397029E032C600F9A28A /* MainModel.swift */; };
 		1DB7397429E03F5C00F9A28A /* SingleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7397329E03F5C00F9A28A /* SingleTextButton.swift */; };
 		1DB7397729E07B5A00F9A28A /* SingleMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7397629E07B5A00F9A28A /* SingleMediaCollectionViewCell.swift */; };
@@ -50,6 +59,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D0C84AE29E53DCA0025B9CA /* Kingfisher Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kingfisher Extension.swift"; sourceTree = "<group>"; };
+		1D0C84B029E55FA70025B9CA /* BooleanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooleanViewModel.swift; sourceTree = "<group>"; };
+		1D0C84B329E571750025B9CA /* SingleTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextViewModel.swift; sourceTree = "<group>"; };
+		1D0C84B629E584960025B9CA /* GetCorrect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCorrect.swift; sourceTree = "<group>"; };
+		1D0C84B929E5860B0025B9CA /* SingleMediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleMediaViewModel.swift; sourceTree = "<group>"; };
+		1D0C84BC29E58B3D0025B9CA /* MatchingVewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingVewModel.swift; sourceTree = "<group>"; };
 		1D231D1A29E0920500F3C1A1 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		1D231D1C29E1584C00F3C1A1 /* MatchingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D231D1F29E16FE700F3C1A1 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
@@ -70,6 +85,7 @@
 		1D66BFA929DC263B006EE621 /* Colors + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors + Extension.swift"; sourceTree = "<group>"; };
 		1D66BFAD29DC29DB006EE621 /* AuthorizationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationTextField.swift; sourceTree = "<group>"; };
 		1D66BFB029DC317A006EE621 /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
+		1D945A5D29E42CCC00791617 /* Kingfisher + SBGKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kingfisher + SBGKit.swift"; sourceTree = "<group>"; };
 		1DB7397029E032C600F9A28A /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		1DB7397329E03F5C00F9A28A /* SingleTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextButton.swift; sourceTree = "<group>"; };
 		1DB7397629E07B5A00F9A28A /* SingleMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleMediaCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -96,7 +112,9 @@
 				1DD3C20129E288B500201EBF /* Lottie in Frameworks */,
 				1D66BFA829DC257C006EE621 /* SnapKit in Frameworks */,
 				1D5C724429DC663400D96D5F /* AWSPinpointPushNotificationsPlugin in Frameworks */,
+				1D945A5929E41B9800791617 /* Kingfisher in Frameworks */,
 				1D5C724629DC663400D96D5F /* Amplify in Frameworks */,
+				1D945A5C29E42CB200791617 /* SVGKit in Frameworks */,
 				1D5C724029DC663400D96D5F /* AWSCognitoAuthPlugin in Frameworks */,
 				1D5C724229DC663400D96D5F /* AWSDataStorePlugin in Frameworks */,
 			);
@@ -105,6 +123,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D0C84B529E584870025B9CA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1D0C84B629E584960025B9CA /* GetCorrect.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		1D231D1E29E16D3400F3C1A1 /* PopUpViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +150,7 @@
 		1D3196D229DF231F00D1A8FA /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				1D0C84B529E584870025B9CA /* Protocols */,
 				1DB7397F29E0870200F9A28A /* View */,
 				1DB7397529E050FE00F9A28A /* ViewModel */,
 			);
@@ -230,6 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				1D66BFA929DC263B006EE621 /* Colors + Extension.swift */,
+				1D0C84AE29E53DCA0025B9CA /* Kingfisher Extension.swift */,
+				1D945A5D29E42CCC00791617 /* Kingfisher + SBGKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +297,10 @@
 			isa = PBXGroup;
 			children = (
 				1D231D1A29E0920500F3C1A1 /* QuizViewModel.swift */,
+				1D0C84B029E55FA70025B9CA /* BooleanViewModel.swift */,
+				1D0C84B329E571750025B9CA /* SingleTextViewModel.swift */,
+				1D0C84B929E5860B0025B9CA /* SingleMediaViewModel.swift */,
+				1D0C84BC29E58B3D0025B9CA /* MatchingVewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -402,6 +435,8 @@
 				1D5C724329DC663400D96D5F /* AWSPinpointPushNotificationsPlugin */,
 				1D5C724529DC663400D96D5F /* Amplify */,
 				1DD3C20029E288B500201EBF /* Lottie */,
+				1D945A5829E41B9800791617 /* Kingfisher */,
+				1D945A5B29E42CB200791617 /* SVGKit */,
 			);
 			productName = ZimranTest;
 			productReference = 1D66BF7D29DC1D24006EE621 /* ZimranTest.app */;
@@ -435,6 +470,8 @@
 				1D66BFA629DC257C006EE621 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				1D5C723C29DC663400D96D5F /* XCRemoteSwiftPackageReference "amplify-swift" */,
 				1DD3C1FF29E288B500201EBF /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				1D945A5729E41B9800791617 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				1D945A5A29E42CB200791617 /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = 1D66BF7E29DC1D24006EE621 /* Products */;
 			projectDirPath = "";
@@ -469,11 +506,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D66BFAA29DC263B006EE621 /* Colors + Extension.swift in Sources */,
+				1D945A5E29E42CCC00791617 /* Kingfisher + SBGKit.swift in Sources */,
+				1D0C84B429E571750025B9CA /* SingleTextViewModel.swift in Sources */,
 				1DB7397E29E0869D00F9A28A /* BooleanCollectionViewCell.swift in Sources */,
 				1DB7397C29E07EDD00F9A28A /* QuizButton.swift in Sources */,
 				1D231D2029E16FE700F3C1A1 /* ResultView.swift in Sources */,
 				1D66BFAE29DC29DB006EE621 /* AuthorizationTextField.swift in Sources */,
 				1DD3C1FB29E2803100201EBF /* HomeViewModel.swift in Sources */,
+				1D0C84AF29E53DCA0025B9CA /* Kingfisher Extension.swift in Sources */,
+				1D0C84B729E584960025B9CA /* GetCorrect.swift in Sources */,
 				1D5C723B29DC53BB00D96D5F /* AuthorizationService.swift in Sources */,
 				1DD3C20829E2CF1000201EBF /* LessonModel.swift in Sources */,
 				1D3196D429DF238200D1A8FA /* QuizViewController.swift in Sources */,
@@ -483,6 +524,7 @@
 				1DB7397129E032C600F9A28A /* MainModel.swift in Sources */,
 				1D231D1D29E1584C00F3C1A1 /* MatchingCollectionViewCell.swift in Sources */,
 				1D66BF9A29DC1EF3006EE621 /* SignInViewController.swift in Sources */,
+				1D0C84B129E55FA70025B9CA /* BooleanViewModel.swift in Sources */,
 				1DD3C20629E2A6B700201EBF /* ResultScoreView.swift in Sources */,
 				1DDB035F29E1F15A003A22F4 /* NetworkService.swift in Sources */,
 				1DB7397429E03F5C00F9A28A /* SingleTextButton.swift in Sources */,
@@ -492,7 +534,9 @@
 				1D231D1B29E0920500F3C1A1 /* QuizViewModel.swift in Sources */,
 				1D66BF8129DC1D24006EE621 /* AppDelegate.swift in Sources */,
 				1DB7397729E07B5A00F9A28A /* SingleMediaCollectionViewCell.swift in Sources */,
+				1D0C84BA29E5860B0025B9CA /* SingleMediaViewModel.swift in Sources */,
 				1DDB036129E27CA0003A22F4 /* ResultViewController.swift in Sources */,
+				1D0C84BD29E58B3D0025B9CA /* MatchingVewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +764,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		1D945A5729E41B9800791617 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		1D945A5A29E42CB200791617 /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVGKit/SVGKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		1DD3C1FF29E288B500201EBF /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -760,6 +820,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1D66BFA629DC257C006EE621 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		1D945A5829E41B9800791617 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D945A5729E41B9800791617 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		1D945A5B29E42CB200791617 /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D945A5A29E42CB200791617 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
 		};
 		1DD3C20029E288B500201EBF /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

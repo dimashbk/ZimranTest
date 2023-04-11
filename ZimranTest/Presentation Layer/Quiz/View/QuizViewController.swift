@@ -12,9 +12,13 @@ protocol QuizCollectionViewCellDelegate: AnyObject {
     func scroll(_ cell: UICollectionViewCell)
 }
 
-final class QuizViewController: UIViewController {
-
+final class QuizViewController: UIViewController, GetCorrectness {
+   
     var quizViewModel: QuizViewModel?
+    var booleanViewModel = BooleanViewModel()
+
+    var isCorrect = Bool()
+    var correctAnswer = ""
     var cellIndex = 0
     
     // MARK: - UI Elements
@@ -70,7 +74,7 @@ final class QuizViewController: UIViewController {
         button.setTitle("True", for: .normal)
         button.backgroundColor = .zmGreen
         button.layer.cornerRadius = 8
-        button.addTarget(self, action: #selector(nextButoon), for: .touchUpInside)
+        button.addTarget(self, action: #selector(trueButtonTap), for: .touchUpInside)
         
         return button
     }()
@@ -81,7 +85,7 @@ final class QuizViewController: UIViewController {
         button.setTitle("False", for: .normal)
         button.backgroundColor = .zmRed
         button.layer.cornerRadius = 8
-        button.addTarget(self, action: #selector(nextButoon), for: .touchUpInside)
+        button.addTarget(self, action: #selector(falseButtonTap), for: .touchUpInside)
         
         return button
     }()
@@ -93,10 +97,18 @@ final class QuizViewController: UIViewController {
         
         return view
     }()
+    
     private func bindQuizVM() {
         quizViewModel?.updateViewData = {
             DispatchQueue.main.async {
                 self.quizCollectionView.reloadData()
+                self.updateProgressView()
+                self.quizProgressView.setProgress(0.0, animated: false)
+                if self.quizViewModel!.lesson[0].questions[0].type == "BOOLEAN" {
+                    self.button.isHidden = true
+                    self.trueButton.isHidden = false
+                    self.falseButton.isHidden = false
+                }
             }
         }
     }
@@ -109,6 +121,12 @@ final class QuizViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = .zmPrimaryBlue
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.topItem?.title = "Stocks"
+    }
+    // MARK: - Delegate funcs
+    
+    func getCorrectBoolean(isCorrect: Bool, correctAnswer: String) {
+        self.isCorrect = isCorrect
+        self.correctAnswer = correctAnswer
     }
     
     // MARK: - Private funcs
@@ -173,8 +191,9 @@ final class QuizViewController: UIViewController {
     }
     
     private func updateProgressView() {
-        if quizProgressView.progress != 1.0 {
-            quizProgressView.progress += 0.1 / 1.0
+        let questionsNumber = Float(((quizViewModel?.lesson[0].questions.count)!) )
+        if quizProgressView.progress !=  questionsNumber{
+            quizProgressView.progress += 1 / questionsNumber
         }
     }
     
@@ -184,8 +203,30 @@ final class QuizViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @objc func trueButtonTap() {
+        if booleanViewModel.correctAnswer == true {
+                resultView.configureResultView(isCorrect: true, correctAnswer: "")
+        } else {
+                resultView.configureResultView(isCorrect: false, correctAnswer: "False")
+        }
+        resultView.isHidden = false
+    }
+    @objc func falseButtonTap() {
+        if booleanViewModel.correctAnswer == false {
+                resultView.configureResultView(isCorrect: true, correctAnswer: "")
+        } else {
+                resultView.configureResultView(isCorrect: false, correctAnswer: "True")
+        }
+        resultView.isHidden = false
+    }
+    
     @objc func nextButoon() {
-            resultView.isHidden = false
+        if isCorrect {
+                resultView.configureResultView(isCorrect: true, correctAnswer: correctAnswer)
+        } else {
+                resultView.configureResultView(isCorrect: false, correctAnswer: correctAnswer)
+        }
+        resultView.isHidden = false
     }
     
     @objc func nextQuestion() {
