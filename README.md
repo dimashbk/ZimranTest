@@ -37,6 +37,8 @@ Open terminal and clone the project:
 ```
 
 
+Wait till package got installed
+
 And just run the project from Xcode 
 
 Recommended devices : from iphone X
