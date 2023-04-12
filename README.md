@@ -16,6 +16,9 @@ Make a quiz with registration
 + Lottie - SDK to make animations
 + SnapKit
 
+
+I didn't have time to to all the thing due my poor free time, so just try to enjoy of things that i had managed :)
+
 # Usage
 
 ## Firstly login and wait for some few second and you will be able to tap on single button on the page
@@ -32,4 +35,6 @@ Open terminal and clone the project:
 ```swift
     https://github.com/dimashbk/ZimranTest.git
 ```
+And just run the project from Xcode
+
 Recommended devices : from X
