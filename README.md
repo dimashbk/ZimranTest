@@ -35,6 +35,7 @@ Open terminal and clone the project:
 ```swift
     https://github.com/dimashbk/ZimranTest.git
 ```
-And just run the project from Xcode
 
+
+And just run the project from Xcode 
 Recommended devices : from X
