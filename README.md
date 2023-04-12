@@ -38,4 +38,5 @@ Open terminal and clone the project:
 
 
 And just run the project from Xcode 
+
 Recommended devices : from X
