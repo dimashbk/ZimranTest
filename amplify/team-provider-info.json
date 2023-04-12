@@ -1,0 +1,25 @@
+{
+  "zimran": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-zimrantest-zimran-211739-authRole",
+      "UnauthRoleArn": "arn:aws:iam::975460524842:role/amplify-zimrantest-zimran-211739-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::975460524842:role/amplify-zimrantest-zimran-211739-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-zimrantest-zimran-211739-deployment",
+      "UnauthRoleName": "amplify-zimrantest-zimran-211739-unauthRole",
+      "StackName": "amplify-zimrantest-zimran-211739",
+      "StackId": "arn:aws:cloudformation:us-east-1:975460524842:stack/amplify-zimrantest-zimran-211739/d9455fa0-d2fb-11ed-9703-0ab9ea6915a5",
+      "AmplifyAppId": "dldz0g3hjhnn0"
+    },
+    "categories": {
+      "auth": {
+        "zimrantest2bd39f06": {
+          "userPoolId": "us-east-1_E1aFXg23y",
+          "userPoolName": "usergo",
+          "webClientId": "4ffschrcmqig0d85fvsn3t2c47",
+          "nativeClientId": "4ffschrcmqig0d85fvsn3t2c47"
+        }
+      }
+    }
+  }
+}

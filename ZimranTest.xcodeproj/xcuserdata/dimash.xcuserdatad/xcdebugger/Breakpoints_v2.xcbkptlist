@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "E16B63ED-5AE3-47D9-A00F-5717EEDE6245"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0168C139-7F5E-434D-A5F7-117EEF1006B6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZimranTest/Application Lyaer/Protocols/SetupViewProtocol.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "4"
+            endingLineNumber = "4"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AC92EEE9-1DF9-4906-9816-497498FEB0C2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZimranTest/Presentation Layer/SignIn/ViewModel/SignInViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3A587F6-85B6-41AF-8F94-8F85CA26E65E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZimranTest/Core Layer/Custom/SingleTextButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "checkState()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D530644-1867-4827-B8A7-51CE2D41577F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZimranTest/Presentation Layer/Quiz/View/Cells/SingleTextCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "SingleTextCollectionViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D19FCF34-1B29-4C2E-8457-0559439338E9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZimranTest/Presentation Layer/Quiz/View/QuizViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
+            landmarkName = "nextButoon()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D19FCF34-1B29-4C2E-8457-0559439338E9 - 18f69c593b7b5d93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZimranTest.QuizViewController.nextButoon() -&gt; ()"
+                  moduleName = "ZimranTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dimash/Desktop/ZimranTest/ZimranTest/Presentation%20Layer/Quiz/View/QuizViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "D19FCF34-1B29-4C2E-8457-0559439338E9 - 18f69c593b7b5db2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZimranTest.QuizViewController.nextButoon() -&gt; ()"
+                  moduleName = "ZimranTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dimash/Desktop/ZimranTest/ZimranTest/Presentation%20Layer/Quiz/View/QuizViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "179"
+                  endingLineNumber = "179"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90BF206E-197F-496C-97F9-8551CADA2156"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZimranTest/Network Layer/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "obtainLesson(url:accessToken:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "90BF206E-197F-496C-97F9-8551CADA2156 - feee08a2320d1b73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ZimranTest.NetworkService.obtainLesson(url: Foundation.URL, accessToken: Swift.String, completion: (ZimranTest.fetchLessonResult) -&gt; ()) -&gt; ()"
+                  moduleName = "ZimranTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dimash/Desktop/ZimranTest/ZimranTest/Network%20Layer/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "476">
+               </Location>
+               <Location
+                  uuid = "90BF206E-197F-496C-97F9-8551CADA2156 - feee08a2320d1b73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ZimranTest.NetworkService.obtainLesson(url: Foundation.URL, accessToken: Swift.String, completion: (ZimranTest.fetchLessonResult) -&gt; ()) -&gt; ()"
+                  moduleName = "ZimranTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dimash/Desktop/ZimranTest/ZimranTest/Network%20Layer/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "472">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B8AC525-747E-4AE6-BA4F-79E6801616D6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZimranTest/Presentation Layer/Quiz/ViewModel/QuizViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "fetchLesson()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2B8AC525-747E-4AE6-BA4F-79E6801616D6 - 60d9272ffcdbf74d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZimranTest.QuizViewModel.fetchLesson() -&gt; ()"
+                  moduleName = "ZimranTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dimash/Desktop/ZimranTest/ZimranTest/Presentation%20Layer/Quiz/ViewModel/QuizViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "1436">
+               </Location>
+               <Location
+                  uuid = "2B8AC525-747E-4AE6-BA4F-79E6801616D6 - 60d9272ffcdbf72c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZimranTest.QuizViewModel.fetchLesson() -&gt; ()"
+                  moduleName = "ZimranTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dimash/Desktop/ZimranTest/ZimranTest/Presentation%20Layer/Quiz/ViewModel/QuizViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1524">
+               </Location>
+               <Location
+                  uuid = "2B8AC525-747E-4AE6-BA4F-79E6801616D6 - 60d9272ffcdbf70f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZimranTest.QuizViewModel.fetchLesson() -&gt; ()"
+                  moduleName = "ZimranTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dimash/Desktop/ZimranTest/ZimranTest/Presentation%20Layer/Quiz/ViewModel/QuizViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "1436">
+               </Location>
+               <Location
+                  uuid = "2B8AC525-747E-4AE6-BA4F-79E6801616D6 - 60d9272ffcdbf7ee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZimranTest.QuizViewModel.fetchLesson() -&gt; ()"
+                  moduleName = "ZimranTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dimash/Desktop/ZimranTest/ZimranTest/Presentation%20Layer/Quiz/ViewModel/QuizViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1484">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C7B4851D-1DEB-4564-AE40-AC54D6387A56"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZimranTest/Network Layer/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "obtainLesson(url:accessToken:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84FF508B-3335-42DF-A51C-E0EACB719035"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZimranTest/Presentation Layer/Quiz/View/Cells/GapFillCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "buttonTarget(sender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "84FF508B-3335-42DF-A51C-E0EACB719035 - b0123d6be7385b75"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZimranTest.GapFillCollectionViewCell.buttonTarget(sender: __C.UIButton) -&gt; ()"
+                  moduleName = "ZimranTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dimash/Desktop/ZimranTest/ZimranTest/Presentation%20Layer/Quiz/View/Cells/GapFillCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "191"
+                  endingLineNumber = "191"
+                  offsetFromSymbolStart = "4216">
+               </Location>
+               <Location
+                  uuid = "84FF508B-3335-42DF-A51C-E0EACB719035 - b0123d6be7385b75"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZimranTest.GapFillCollectionViewCell.buttonTarget(sender: __C.UIButton) -&gt; ()"
+                  moduleName = "ZimranTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dimash/Desktop/ZimranTest/ZimranTest/Presentation%20Layer/Quiz/View/Cells/GapFillCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "191"
+                  endingLineNumber = "191"
+                  offsetFromSymbolStart = "4204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
