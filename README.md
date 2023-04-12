@@ -11,7 +11,7 @@ Make a quiz with registration
 + URLSession - To make requests
 + MVVM - Architecture of the app
 + KingFisher - to get images and set them
-+ SVGKit - IOS doesn't supports svg files and it uses to conveert them
++ SVGKit - IOS doesn't support svg files and it uses to conveert them
 + Amplify - SDK for IOS to make registation with AWS Cognito
 + Lottie - SDK to make animations
 + SnapKit
