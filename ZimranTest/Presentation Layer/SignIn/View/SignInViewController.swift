@@ -67,7 +67,7 @@ final class SignInViewController: UIViewController {
         setup()
         Task {
             await authorizationService.signOutLocally()
-            await authorizationService.signIn(username: "dimash_test_assignment@zimran.io", password: "6f7vTJqLrzm96c3H7Phy3mMa")
+//            await authorizationService.signIn(username: "dimash_test_assignment@zimran.io", password: "6f7vTJqLrzm96c3H7Phy3mMa")
         }
     }
     
@@ -139,5 +139,8 @@ final class SignInViewController: UIViewController {
         }
 
     }
+    override func touchesBegan(_ touches:Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
     
 }
