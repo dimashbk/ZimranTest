@@ -13,6 +13,8 @@
 		1D0C84B729E584960025B9CA /* GetCorrect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C84B629E584960025B9CA /* GetCorrect.swift */; };
 		1D0C84BA29E5860B0025B9CA /* SingleMediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C84B929E5860B0025B9CA /* SingleMediaViewModel.swift */; };
 		1D0C84BD29E58B3D0025B9CA /* MatchingVewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C84BC29E58B3D0025B9CA /* MatchingVewModel.swift */; };
+		1D0C84BF29E682F70025B9CA /* GapFillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C84BE29E682F70025B9CA /* GapFillCollectionViewCell.swift */; };
+		1D0C84C229E6B2840025B9CA /* GapFillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C84C129E6B2840025B9CA /* GapFillViewModel.swift */; };
 		1D231D1B29E0920500F3C1A1 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D231D1A29E0920500F3C1A1 /* QuizViewModel.swift */; };
 		1D231D1D29E1584C00F3C1A1 /* MatchingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D231D1C29E1584C00F3C1A1 /* MatchingCollectionViewCell.swift */; };
 		1D231D2029E16FE700F3C1A1 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D231D1F29E16FE700F3C1A1 /* ResultView.swift */; };
@@ -65,6 +67,8 @@
 		1D0C84B629E584960025B9CA /* GetCorrect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCorrect.swift; sourceTree = "<group>"; };
 		1D0C84B929E5860B0025B9CA /* SingleMediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleMediaViewModel.swift; sourceTree = "<group>"; };
 		1D0C84BC29E58B3D0025B9CA /* MatchingVewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingVewModel.swift; sourceTree = "<group>"; };
+		1D0C84BE29E682F70025B9CA /* GapFillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GapFillCollectionViewCell.swift; sourceTree = "<group>"; };
+		1D0C84C129E6B2840025B9CA /* GapFillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GapFillViewModel.swift; sourceTree = "<group>"; };
 		1D231D1A29E0920500F3C1A1 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		1D231D1C29E1584C00F3C1A1 /* MatchingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D231D1F29E16FE700F3C1A1 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 				1D0C84B329E571750025B9CA /* SingleTextViewModel.swift */,
 				1D0C84B929E5860B0025B9CA /* SingleMediaViewModel.swift */,
 				1D0C84BC29E58B3D0025B9CA /* MatchingVewModel.swift */,
+				1D0C84C129E6B2840025B9CA /* GapFillViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 				1DB7397629E07B5A00F9A28A /* SingleMediaCollectionViewCell.swift */,
 				1DB7397D29E0869D00F9A28A /* BooleanCollectionViewCell.swift */,
 				1D231D1C29E1584C00F3C1A1 /* MatchingCollectionViewCell.swift */,
+				1D0C84BE29E682F70025B9CA /* GapFillCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -513,6 +519,7 @@
 				1D231D2029E16FE700F3C1A1 /* ResultView.swift in Sources */,
 				1D66BFAE29DC29DB006EE621 /* AuthorizationTextField.swift in Sources */,
 				1DD3C1FB29E2803100201EBF /* HomeViewModel.swift in Sources */,
+				1D0C84BF29E682F70025B9CA /* GapFillCollectionViewCell.swift in Sources */,
 				1D0C84AF29E53DCA0025B9CA /* Kingfisher Extension.swift in Sources */,
 				1D0C84B729E584960025B9CA /* GetCorrect.swift in Sources */,
 				1D5C723B29DC53BB00D96D5F /* AuthorizationService.swift in Sources */,
@@ -532,6 +539,7 @@
 				1DDB459629E01B04000255AE /* SingleTextCollectionViewCell.swift in Sources */,
 				1DD30DB229DD9CF300119EF1 /* HomeViewController.swift in Sources */,
 				1D231D1B29E0920500F3C1A1 /* QuizViewModel.swift in Sources */,
+				1D0C84C229E6B2840025B9CA /* GapFillViewModel.swift in Sources */,
 				1D66BF8129DC1D24006EE621 /* AppDelegate.swift in Sources */,
 				1DB7397729E07B5A00F9A28A /* SingleMediaCollectionViewCell.swift in Sources */,
 				1D0C84BA29E5860B0025B9CA /* SingleMediaViewModel.swift in Sources */,
@@ -682,7 +690,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -710,7 +718,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -290,26 +290,18 @@ final class MatchingCollectionViewCell: UICollectionViewCell, ButtonStateProtoco
             }
         }
         if buttonsOrdering.imageButton != nil && buttonsOrdering.labelButton != nil {
-            if matchingViewModel.getResult(buttons: buttonsOrdering) {
-                buttonsOrdering.imageButton = nil
-                buttonsOrdering.labelButton = nil
-                onClickFirstButton.isEnabled = false
-                onClickFirstButton.alpha = 0.2
-                onClickSecondButton.isEnabled = false
-                onClickSecondButton.alpha = 0.2
-                onClickFirstButton = UIButton()
-                onClickSecondButton = UIButton()
-            } else {
-                buttonsOrdering.imageButton = nil
-                buttonsOrdering.labelButton = nil
-                onClickFirstButton.isEnabled = false
-                onClickFirstButton.alpha = 0.2
-                onClickSecondButton.isEnabled = false
-                onClickSecondButton.alpha = 0.2
-                onClickFirstButton = UIButton()
-                onClickSecondButton = UIButton()
-            }
+            matchingViewModel.getResult(buttons: buttonsOrdering)
+            
+            buttonsOrdering.imageButton = nil
+            buttonsOrdering.labelButton = nil
+            onClickFirstButton.isEnabled = false
+            onClickFirstButton.alpha = 0.2
+            onClickSecondButton.isEnabled = false
+            onClickSecondButton.alpha = 0.2
+            onClickFirstButton = UIButton()
+            onClickSecondButton = UIButton()
+
         }
-        getCorrectnessDelegate?.getCorrectBoolean(isCorrect: matchingViewModel.getCorretness(), correctAnswer: matchingViewModel.correctAnswer)
+        getCorrectnessDelegate?.getCorrectBoolean(isCorrect: matchingViewModel.getCorretness(), correctAnswer: "Try again")
     }
 }

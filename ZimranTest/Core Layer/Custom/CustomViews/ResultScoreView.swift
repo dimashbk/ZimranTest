@@ -24,9 +24,8 @@ final class ResultScoreView: UIView {
         return label
     }()
     
-    private lazy var scoreLabel: UILabel = {
+    lazy var scoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "87%"
         label.textColor = .zmGreen
         
         return label
@@ -34,7 +33,7 @@ final class ResultScoreView: UIView {
     
     private lazy var secondLabel: UILabel = {
         let label = UILabel()
-        label.text = "fkfkfkk kfkfkfk fkfkkfkf"
+        label.text = "Lorem ispum"
         label.textColor = .zmDarkGray
         label.font = UIFont(name: "Inter-Medium", size: 14)
         

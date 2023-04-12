@@ -20,7 +20,7 @@ final class QuizViewController: UIViewController, GetCorrectness {
     var isCorrect = Bool()
     var correctAnswer = ""
     var cellIndex = 0
-    
+    var correctAnswerCount = 0
     // MARK: - UI Elements
     
     lazy var quizCollectionView: UICollectionView = {
@@ -41,6 +41,8 @@ final class QuizViewController: UIViewController, GetCorrectness {
                                 forCellWithReuseIdentifier: BooleanCollectionViewCell.description())
         collectionView.register(MatchingCollectionViewCell.self,
                                 forCellWithReuseIdentifier: MatchingCollectionViewCell.description())
+        collectionView.register(GapFillCollectionViewCell.self,
+                                forCellWithReuseIdentifier: GapFillCollectionViewCell.description())
         return collectionView
     }()
     
@@ -222,16 +224,23 @@ final class QuizViewController: UIViewController, GetCorrectness {
     
     @objc func nextButoon() {
         if isCorrect {
+                correctAnswerCount += 1
                 resultView.configureResultView(isCorrect: true, correctAnswer: correctAnswer)
+
         } else {
                 resultView.configureResultView(isCorrect: false, correctAnswer: correctAnswer)
         }
-        resultView.isHidden = false
+        UIView.animate(withDuration: 2) { [self] in
+            resultView.isHidden = false
+        }
+        
+        
     }
     
     @objc func nextQuestion() {
         updateProgressView()
         if quizProgressView.progress == 1.0 {
+
             navigationController?.pushViewController(ResultViewController(), animated: true)
         }
         if cellIndex < (quizViewModel!.lesson[0].questions.count - 1) && quizViewModel!.lesson[0].questions[cellIndex + 1].type == "BOOLEAN" {
@@ -248,6 +257,7 @@ final class QuizViewController: UIViewController, GetCorrectness {
             cellIndex += 1
         }
         resultView.isHidden = true
+        isCorrect = false
     }
 }
 

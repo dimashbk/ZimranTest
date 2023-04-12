@@ -73,5 +73,10 @@ final class NetworkService {
             
         }.resume()
     }
+    func postCorrectness(url: URL, accessToken: String ,completion: @escaping(fetchLessonResult) -> Void) {
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+    }
     
 }

@@ -19,8 +19,8 @@ final class SingleTextViewModel {
     
     func getCorretness(chosenButton: SingleTextButton) -> Bool {
         if chosenButton.label.text == correctAnswer {
-            return true
             correctAnswer = "Good Job"
+            return true
         } else {
             return false
         }

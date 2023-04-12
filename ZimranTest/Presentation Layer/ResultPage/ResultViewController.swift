@@ -12,6 +12,8 @@ class ResultViewController: UIViewController {
     
     let animationView = LottieAnimationView()
     
+    var score = "87"
+    
     private lazy var label: UILabel = {
         let label = UILabel()
         label.text = "Lesson complete!"
@@ -21,8 +23,9 @@ class ResultViewController: UIViewController {
         return label
     }()
     
-    private lazy var resultScoreView: ResultScoreView = {
+    lazy var resultScoreView: ResultScoreView = {
         let view = ResultScoreView()
+        view.scoreLabel.text = (score + "%")
         
         return view
     }()

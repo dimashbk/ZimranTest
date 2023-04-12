@@ -108,7 +108,7 @@ final class HomeViewController: UIViewController {
     @objc func moveToQuiz() {
         let quizVC = QuizViewController()
         quizVC.quizViewModel = QuizViewModel(topicId:  homeViewModel!.course[0].units[0].topics[0].id,
-                                             lessonId: homeViewModel!.course[0].units[0].topics[0].lessons[1].id,
+                                             lessonId: homeViewModel!.course[0].units[0].topics[0].lessons[0].id,
                                              accessToken: homeViewModel!.accessToken,
                                              userId: homeViewModel!.userId)
         navigationController?.pushViewController(quizVC, animated: true)

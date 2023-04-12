@@ -50,7 +50,12 @@ extension QuizViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             return viewCell
         case "GAP_FILL":
-            guard let viewCell = collectionView.dequeueReusableCell(withReuseIdentifier: BooleanCollectionViewCell.description(), for: indexPath) as? BooleanCollectionViewCell else { return UICollectionViewCell() }
+            guard let viewCell = collectionView.dequeueReusableCell(withReuseIdentifier: GapFillCollectionViewCell.description(), for: indexPath) as? GapFillCollectionViewCell else { return UICollectionViewCell() }
+
+            viewCell.configureCell(choises: questions.choices, questionText: questions.text)
+
+            viewCell.getCorrectnessDelegate = self
+            
             return viewCell
         case "MATCHING":
             guard let viewCell = collectionView.dequeueReusableCell(withReuseIdentifier:  MatchingCollectionViewCell.description(), for: indexPath) as?  MatchingCollectionViewCell else { return UICollectionViewCell() }
