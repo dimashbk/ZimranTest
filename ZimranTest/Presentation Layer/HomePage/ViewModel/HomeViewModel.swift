@@ -37,7 +37,6 @@ final class HomeViewModel {
                 self?.callback?()
             case .failure(let error):
                 print(error.localizedDescription)
-                print("pizda")
             }
         }
 
