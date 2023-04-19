@@ -22,7 +22,7 @@ I didn't have time to to all the thing due my poor free time, so just try to enj
 # Usage
 
 ## Firstly login and wait for some few second and you will be able to tap on single button on the page
-
+ https://youtube.com/shorts/8okn0joEm-8?feature=share link to see how it works
 
 # Installation
 
